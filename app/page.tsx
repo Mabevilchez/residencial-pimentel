@@ -62,7 +62,7 @@ function HeroSection() {
     <p className="text-xs tracking-[0.3em] uppercase font-sans font-medium text-sand/80 mb-8">{PROJECT.eyebrow}</p>
     <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none font-light text-white mb-4 max-w-3xl">
     Where Life Meets<br /><span className="italic text-sand">the Ocean.</span>
-    </h1>h1>
+    </h1>
     <p className="font-serif text-2xl md:text-3xl font-light text-white/70 mb-6 italic">Vive Pimentel</p>
     <div className="w-12 border-t border-sand/50 mb-8" />
     <p className="font-sans text-base md:text-lg font-light text-white/80 max-w-xl mb-10 leading-relaxed">Departamentos en primera linea frente al mar, disenados para disfrutar en familia y mas.</p>
