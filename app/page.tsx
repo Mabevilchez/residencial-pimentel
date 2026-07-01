@@ -143,9 +143,9 @@ function WhySection() {
 
 function ImageBreak() {
   return (
-    <section className="relative w-full min-h-[60vh] flex items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-[60vh] flex items-center justify-start overflow-hidden">
       <div className="absolute inset-0"><Image src="https://images.unsplash.com/photo-1625175006425-d61920aa8794?q=80&w=1920&auto=format&fit=crop" alt="Costa de Pimentel" fill className="object-cover" sizes="100vw" /></div>
-      <div className="relative z-10 text-center px-6 py-24"><h2 className="font-serif text-4xl md:text-6xl font-light text-white max-w-4xl mx-auto">Donde cada día empieza y<br className="hidden md:block" /> termina con el mar.</h2></div>
+      <div className="relative z-10 px-6 pt-12 pb-24"><h2 className="font-serif text-4xl md:text-6xl font-light text-white max-w-4xl">Donde cada día empieza y<br className="hidden md:block" /> termina con el mar.</h2></div>
     </section>
   );
 }
