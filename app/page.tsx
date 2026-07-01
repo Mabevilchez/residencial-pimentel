@@ -178,7 +178,7 @@ function LocationSection() {
               <p className="eyebrow mb-5 flex items-center gap-2"><Car size={14} /> En auto</p>
               <ul className="space-y-4">{enauto.map((item) => (<li key={item.label} className="flex items-baseline gap-4 border-b border-sand/40 pb-4"><span className="font-serif text-ocean text-xl">{item.time}</span><span className="font-sans text-sm text-charcoal/70">{item.label}</span></li>))}</ul>
             </div>
-            <a href="https://maps.google.com/?q=Malecon+Pimentel+Peru" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-sans text-sm text-ocean border-b border-ocean/20">Abrir en Google Maps <ArrowRight size={14} /></a>
+            <a href="https://maps.app.goo.gl/tqojJkJSTL9SZNg98" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-sans text-sm text-ocean border-b border-ocean/20">Abrir en Google Maps <ArrowRight size={14} /></a>
           </div>
         </div>
       </div>
