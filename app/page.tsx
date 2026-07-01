@@ -1,12 +1,11 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Menu, X, ChevronDown, Building2, Home, Layers, BedDouble, Waves, UtensilsCrossed, MapPin, Clock, Car, Check, Instagram, MessageCircle, Phone, Mail, ArrowRight } from "lucide-react";
+import { Menu, X, ChevronDown, Building2, Home, Layers, BedDouble, Waves, UtensilsCrossed, MapPin, Car, Check, Instagram, MessageCircle, Phone, ArrowRight } from "lucide-react";
 import { PROJECT, FLATS, DUPLEXES, NAV_LINKS } from "@/lib/data";
 
 const WHATSAPP_URL = `https://wa.me/${PROJECT.whatsapp}?text=${encodeURIComponent(PROJECT.whatsappMessage)}`;
 
-// ============ NAVIGATION ============
 function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -26,9 +25,7 @@ function Navigation() {
             </a>
             <ul className="hidden lg:flex items-center gap-8">
               {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <a href={link.href} className={`font-sans text-sm font-medium tracking-wide transition-colors hover:text-ocean ${scrolled ? "text-charcoal" : "text-white/90"}`}>{link.label}</a>
-                </li>
+                <li key={link.href}><a href={link.href} className={`font-sans text-sm font-medium tracking-wide transition-colors hover:text-ocean ${scrolled ? "text-charcoal" : "text-white/90"}`}>{link.label}</a></li>
               ))}
             </ul>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className={`hidden lg:inline-flex items-center px-5 py-2.5 text-sm font-medium font-sans tracking-wide transition-all ${scrolled ? "bg-ocean text-white hover:bg-navy" : "border border-white text-white hover:bg-white hover:text-charcoal"}`}>Solicitar información</a>
@@ -54,7 +51,6 @@ function Navigation() {
   );
 }
 
-// ============ HERO ============
 function HeroSection() {
   return (
     <section id="hero" className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
@@ -76,14 +72,13 @@ function HeroSection() {
         </div>
         <p className="font-sans text-xs text-white/50 tracking-widest uppercase">Solo 30 departamentos &nbsp;·&nbsp; 27 flats &nbsp;·&nbsp; 3 dúplex</p>
       </div>
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
         <ChevronDown size={20} className="text-white/40" />
       </div>
     </section>
   );
 }
 
-// ============ PROJECT OVERVIEW ============
 function ProjectOverview() {
   const facts = [
     { icon: Layers, label: "9 pisos" }, { icon: Home, label: "27 flats" },
@@ -123,30 +118,21 @@ function ProjectOverview() {
   );
 }
 
-// ============ WHY SECTION ============
 function WhySection() {
   const reasons = [
     { number: "01", title: "Ubicación privilegiada", text: "En la primera fila del Malécón de Pimentel, a pocos pasos de la playa, el muelle histórico y los principales puntos de interés.", image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=700&q=85", alt: "Muelle histórico de Pimentel", aspect: "aspect-[3/4]" },
-    { number: "02", title: "Vistas directas al mar y al muelle", text: "El proyecto integra el océano a la vida cotidiana, con vistas desde el dormitorio principal, la sala y los espacios exteriores.", image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=85", alt: "Vista al Pacífico desde balcón", aspect: "aspect-[3/5]" },
+    { number: "02", title: "Vistas directas al mar y al muelle", text: "El proyecto integra el océano a la vida cotidiana, con vistas desde el dormitorio principal, la sala y los espacios exteriores.", image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=85", alt: "Vista al Pacífico", aspect: "aspect-[3/5]" },
     { number: "03", title: "Inversión inteligente", text: "Una propiedad en una zona de alta plusvalía, a solo 15 minutos de Chiclayo, dentro de un entorno tranquilo y exclusivo.", image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=700&q=85", alt: "Atardecer en la costa de Pimentel", aspect: "aspect-[3/4]" },
   ];
   return (
     <section className="section-pad bg-beige/40">
       <div className="container-narrow">
-        <div className="mb-16 md:mb-20">
-          <p className="eyebrow mb-5">Ventajas del proyecto</p>
-          <h2 className="headline-lg text-charcoal max-w-xl">¿Por qué Residencial Pimentel?</h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-10 items-end">
+        <div className="mb-16"><p className="eyebrow mb-5">Ventajas del proyecto</p><h2 className="headline-lg text-charcoal max-w-xl">¿Por qué Residencial Pimentel?</h2></div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
           {reasons.map((r, i) => (
             <div key={r.number} className={`flex flex-col gap-6 ${i === 1 ? "md:-mb-12" : ""}`}>
-              <div className={`relative w-full overflow-hidden ${r.aspect}`}>
-                <Image src={r.image} alt={r.alt} fill className="object-cover transition-transform duration-700 hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
-              </div>
-              <div>
-                <p className="font-sans text-xs tracking-[0.2em] text-ocean mb-3">{r.number} · {r.title}</p>
-                <p className="font-sans text-sm text-charcoal/70 leading-relaxed">{r.text}</p>
-              </div>
+              <div className={`relative w-full overflow-hidden ${r.aspect}`}><Image src={r.image} alt={r.alt} fill className="object-cover transition-transform duration-700 hover:scale-105" sizes="33vw" /></div>
+              <div><p className="font-sans text-xs tracking-[0.2em] text-ocean mb-3">{r.number} · {r.title}</p><p className="font-sans text-sm text-charcoal/70 leading-relaxed">{r.text}</p></div>
             </div>
           ))}
         </div>
@@ -155,75 +141,41 @@ function WhySection() {
   );
 }
 
-// ============ IMAGE BREAK ============
 function ImageBreak() {
   return (
     <section className="relative w-full min-h-[60vh] flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0">
-        <Image src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=85" alt="Costa de Pimentel al amanecer" fill className="object-cover object-center" sizes="100vw" />
-        <div className="absolute inset-0 bg-navy/50" />
-      </div>
-      <div className="relative z-10 text-center px-6 py-24">
-        <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-white leading-tight max-w-4xl mx-auto">Donde cada día empieza y<br className="hidden md:block" /><span className="italic text-sand"> termina frente al mar.</span></h2>
-      </div>
+      <div className="absolute inset-0"><Image src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=85" alt="Costa de Pimentel" fill className="object-cover" sizes="100vw" /><div className="absolute inset-0 bg-navy/50" /></div>
+      <div className="relative z-10 text-center px-6 py-24"><h2 className="font-serif text-4xl md:text-6xl font-light text-white max-w-4xl mx-auto">Donde cada día empieza y<br className="hidden md:block" /><span className="italic text-sand"> termina frente al mar.</span></h2></div>
     </section>
   );
 }
 
-// ============ LOCATION ============
 function LocationSection() {
-  const apie = [
-    { time: "1 min", label: "de la playa" }, { time: "3 min", label: "del mar" },
-    { time: "3 min", label: "del Club Casino de Pimentel" }, { time: "5 min", label: "de farmacias y supermercados" },
-    { time: "5 min", label: "del muelle histórico y principales restaurantes" },
-  ];
-  const enauto = [{ time: "15 min", label: "de Chiclayo" }, { time: "20 min", label: "del aeropuerto" }];
+  const apie = [{time:"1 min",label:"de la playa"},{time:"3 min",label:"del mar"},{time:"3 min",label:"del Club Casino de Pimentel"},{time:"5 min",label:"de farmacias y supermercados"},{time:"5 min",label:"del muelle histórico y principales restaurantes"}];
+  const enauto = [{time:"15 min",label:"de Chiclayo"},{time:"20 min",label:"del aeropuerto"}];
   return (
     <section id="ubicacion" className="section-pad bg-warm-white">
       <div className="container-narrow">
-        <div className="mb-12">
-          <p className="eyebrow mb-5">Ubicación estratégica</p>
-          <h2 className="headline-lg text-charcoal mb-4">Todo cerca. El mar aún más.</h2>
-          <p className="font-sans text-sm text-charcoal/60 flex items-center gap-2"><MapPin size={14} /> {PROJECT.address}</p>
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          <div className="relative aspect-[4/3] bg-beige border border-sand overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-ocean/10 to-sand/20" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-4 h-4 bg-ocean rounded-full mx-auto mb-3 ring-4 ring-ocean/20" />
-                <p className="font-serif text-navy text-lg font-light">Residencial Pimentel</p>
-                <p className="font-sans text-xs text-charcoal/60 mt-1">Malécón de Pimentel</p>
+        <div className="mb-12"><p className="eyebrow mb-5">Ubicación estratégica</p><h2 className="headline-lg text-charcoal mb-4">Todo cerca. El mar aún más.</h2><p className="font-sans text-sm text-charcoal/60 flex items-center gap-2"><MapPin size={14} /> {PROJECT.address}</p></div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="relative aspect-[4/3] bg-beige border border-sand overflow-hidden flex items-center justify-center">
+            <div className="text-center p-8">
+              <div className="w-4 h-4 bg-ocean rounded-full mx-auto mb-3 ring-4 ring-ocean/20" />
+              <p className="font-serif text-navy text-lg font-light">Residencial Pimentel</p>
+              <p className="font-sans text-xs text-charcoal/60 mt-1">Malécón de Pimentel</p>
+              <div className="flex flex-wrap gap-2 mt-6 justify-center">
+                {["Malécón","Playa","Muelle histórico","Club Casino","Restaurantes","Ruta Chiclayo","Aeropuerto"].map(l => (<span key={l} className="text-xs bg-ocean/10 text-ocean px-2 py-1 font-sans">{l}</span>))}
               </div>
-            </div>
-            <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm p-3 flex flex-wrap gap-2">
-              {["Malécón","Playa","Muelle histórico","Club Casino","Restaurantes","Ruta Chiclayo","Aeropuerto"].map(label => (
-                <span key={label} className="text-xs bg-ocean/10 text-ocean px-2 py-1 font-sans">{label}</span>
-              ))}
             </div>
           </div>
           <div className="space-y-10">
             <div>
-              <p className="eyebrow mb-5 flex items-center gap-2"><span className="text-lg">&#x1F6B6;</span> A pie</p>
-              <ul className="space-y-4">
-                {apie.map((item) => (
-                  <li key={item.label} className="flex items-baseline gap-4 border-b border-sand/40 pb-4">
-                    <span className="font-serif text-ocean text-xl font-light w-16 flex-shrink-0">{item.time}</span>
-                    <span className="font-sans text-sm text-charcoal/75">{item.label}</span>
-                  </li>
-                ))}
-              </ul>
+              <p className="eyebrow mb-5">A pie</p>
+              <ul className="space-y-4">{apie.map((item) => (<li key={item.label} className="flex items-baseline gap-4 border-b border-sand/40 pb-4"><span className="font-serif text-ocean text-xl font-light w-16 flex-shrink-0">{item.time}</span><span className="font-sans text-sm text-charcoal/75">{item.label}</span></li>))}</ul>
             </div>
             <div>
               <p className="eyebrow mb-5 flex items-center gap-2"><Car size={14} /> En auto</p>
-              <ul className="space-y-4">
-                {enauto.map((item) => (
-                  <li key={item.label} className="flex items-baseline gap-4 border-b border-sand/40 pb-4">
-                    <span className="font-serif text-ocean text-xl font-light w-16 flex-shrink-0">{item.time}</span>
-                    <span className="font-sans text-sm text-charcoal/75">{item.label}</span>
-                  </li>
-                ))}
-              </ul>
+              <ul className="space-y-4">{enauto.map((item) => (<li key={item.label} className="flex items-baseline gap-4 border-b border-sand/40 pb-4"><span className="font-serif text-ocean text-xl font-light w-16 flex-shrink-0">{item.time}</span><span className="font-sans text-sm text-charcoal/75">{item.label}</span></li>))}</ul>
             </div>
             <a href="https://maps.google.com/?q=Malecon+Pimentel+Peru" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-sans text-sm text-ocean border-b border-ocean pb-0.5 hover:text-navy transition-colors">Ver ubicación <ArrowRight size={14} /></a>
           </div>
@@ -233,29 +185,17 @@ function LocationSection() {
   );
 }
 
-// ============ LIFESTYLE ============
 function LifestyleSection() {
   return (
     <section className="section-pad bg-beige/30">
       <div className="container-narrow">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div className="order-2 lg:order-1">
-            <p className="eyebrow mb-6">Estilo de vida</p>
-            <h2 className="headline-lg text-charcoal mb-8">Diseñado para que el mar sea parte de tu hogar.</h2>
-            <div className="w-10 border-t border-sand mb-8" />
-            <p className="font-sans text-base text-charcoal/75 leading-relaxed max-w-lg">Interiores cálidos, espacios funcionales y balcones orientados hacia el océano crean una experiencia residencial pensada para disfrutar todos los días.</p>
-          </div>
+          <div className="order-2 lg:order-1"><p className="eyebrow mb-6">Estilo de vida</p><h2 className="headline-lg text-charcoal mb-8">Diseñado para que el mar sea parte de tu hogar.</h2><div className="w-10 border-t border-sand mb-8" /><p className="font-sans text-base text-charcoal/75 leading-relaxed max-w-lg">Interiores cálidos, espacios funcionales y balcones orientados hacia el océano crean una experiencia residencial pensada para disfrutar todos los días.</p></div>
           <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
-            <div className="relative aspect-[3/4] overflow-hidden">
-              <Image src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=600&q=85" alt="Interior con vista al mar" fill className="object-cover" sizes="25vw" />
-            </div>
+            <div className="relative aspect-[3/4] overflow-hidden"><Image src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=600&q=85" alt="Interior con vista al mar" fill className="object-cover" sizes="25vw" /></div>
             <div className="flex flex-col gap-4">
-              <div className="relative aspect-square overflow-hidden">
-                <Image src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=85" alt="Cocina moderna" fill className="object-cover" sizes="25vw" />
-              </div>
-              <div className="relative aspect-square overflow-hidden">
-                <Image src="https://images.unsplash.com/photo-1515263487990-61b07816b324?w=600&q=85" alt="Balcón con vista al mar" fill className="object-cover" sizes="25vw" />
-              </div>
+              <div className="relative aspect-square overflow-hidden"><Image src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=85" alt="Cocina moderna" fill className="object-cover" sizes="25vw" /></div>
+              <div className="relative aspect-square overflow-hidden"><Image src="https://images.unsplash.com/photo-1515263487990-61b07816b324?w=600&q=85" alt="Balcón frente al mar" fill className="object-cover" sizes="25vw" /></div>
             </div>
           </div>
         </div>
@@ -264,7 +204,6 @@ function LifestyleSection() {
   );
 }
 
-// ============ FLATS ============
 function FlatsSection() {
   const [active, setActive] = useState(0);
   const [lightbox, setLightbox] = useState(false);
@@ -272,68 +211,32 @@ function FlatsSection() {
   return (
     <section id="flats" className="section-pad bg-warm-white">
       <div className="container-narrow">
-        <div className="mb-12">
-          <p className="eyebrow mb-5">Unidades residenciales</p>
-          <h2 className="headline-lg text-charcoal mb-2">Nuestros Flats</h2>
-          <p className="font-serif text-xl text-ocean font-light italic">Con acabados que enamoran</p>
-        </div>
-        <div className="flex gap-2 mb-10">
-          {FLATS.map((f, i) => (
-            <button key={f.id} onClick={() => setActive(i)} className={`px-6 py-2.5 font-sans text-sm font-medium transition-all ${i === active ? "bg-ocean text-white" : "border border-sand text-charcoal/70 hover:border-ocean"}`}>{f.title}</button>
-          ))}
-        </div>
+        <div className="mb-12"><p className="eyebrow mb-5">Unidades residenciales</p><h2 className="headline-lg text-charcoal mb-2">Nuestros Flats</h2><p className="font-serif text-xl text-ocean font-light italic">Con acabados que enamoran</p></div>
+        <div className="flex gap-2 mb-10">{FLATS.map((f, i) => (<button key={f.id} onClick={() => setActive(i)} className={`px-6 py-2.5 font-sans text-sm font-medium transition-all ${i === active ? "bg-ocean text-white" : "border border-sand text-charcoal/70 hover:border-ocean"}`}>{f.title}</button>))}</div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <button onClick={() => setLightbox(true)} className="relative aspect-[4/3] overflow-hidden group cursor-zoom-in w-full text-left" aria-label="Ver plano en detalle">
-            <div className="w-full h-full bg-beige flex items-center justify-center border border-sand">
-              <div className="text-center p-8">
-                <div className="w-16 h-16 border border-sand/60 flex items-center justify-center mx-auto mb-4">
-                  <Home size={24} strokeWidth={1} className="text-charcoal/40" />
-                </div>
-                <p className="font-serif text-charcoal/50 text-lg">Plano {flat.title}</p>
-                <p className="font-sans text-xs text-charcoal/40 mt-2">{flat.area}</p>
-                <p className="font-sans text-xs text-ocean mt-3 group-hover:underline">Ampliar plano</p>
-              </div>
+          <button onClick={() => setLightbox(true)} className="relative w-full text-left cursor-zoom-in">
+            <div className="w-full aspect-[4/3] bg-beige flex items-center justify-center border border-sand">
+              <div className="text-center p-8"><div className="w-16 h-16 border border-sand/60 flex items-center justify-center mx-auto mb-4"><Home size={24} strokeWidth={1} className="text-charcoal/40" /></div><p className="font-serif text-charcoal/50 text-lg">Plano {flat.title}</p><p className="font-sans text-xs text-charcoal/40 mt-2">{flat.area}</p><p className="font-sans text-xs text-ocean mt-3 hover:underline">Ampliar plano</p></div>
             </div>
           </button>
           <div>
-            <div className="flex items-baseline gap-4 mb-6">
-              <h3 className="font-serif text-3xl text-charcoal font-light">{flat.title}</h3>
-              <span className="font-sans text-lg text-ocean">{flat.area}</span>
-            </div>
+            <div className="flex items-baseline gap-4 mb-6"><h3 className="font-serif text-3xl text-charcoal font-light">{flat.title}</h3><span className="font-sans text-lg text-ocean">{flat.area}</span></div>
             <div className="w-8 border-t border-sand mb-8" />
-            <ul className="space-y-3 mb-10">
-              {flat.features.map((feature) => (
-                <li key={feature} className="flex items-start gap-3">
-                  <Check size={14} className="text-ocean flex-shrink-0 mt-1" />
-                  <span className="font-sans text-sm text-charcoal/75">{feature}</span>
-                </li>
-              ))}
-            </ul>
+            <ul className="space-y-3 mb-10">{flat.features.map((feature) => (<li key={feature} className="flex items-start gap-3"><Check size={14} className="text-ocean flex-shrink-0 mt-1" /><span className="font-sans text-sm text-charcoal/75">{feature}</span></li>))}</ul>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">Consultar disponibilidad</a>
           </div>
         </div>
-        {lightbox && (
-          <div className="fixed inset-0 z-50 bg-navy/90 flex items-center justify-center p-8" onClick={() => setLightbox(false)}>
-            <div className="bg-beige p-12 max-w-2xl w-full text-center">
-              <p className="font-serif text-2xl text-charcoal mb-4">Plano {flat.title} — {flat.area}</p>
-              <p className="font-sans text-sm text-charcoal/60 mb-6">El plano de planta estará disponible bajo solicitud.</p>
-              <button className="font-sans text-sm text-ocean border-b border-ocean" onClick={() => setLightbox(false)}>Cerrar</button>
-            </div>
-          </div>
-        )}
+        {lightbox && (<div className="fixed inset-0 z-50 bg-navy/90 flex items-center justify-center p-8" onClick={() => setLightbox(false)}><div className="bg-beige p-12 max-w-2xl w-full text-center"><p className="font-serif text-2xl text-charcoal mb-4">Plano {flat.title} — {flat.area}</p><p className="font-sans text-sm text-charcoal/60 mb-6">El plano estará disponible bajo solicitud.</p><button className="font-sans text-sm text-ocean border-b border-ocean" onClick={() => setLightbox(false)}>Cerrar</button></div></div>)}
       </div>
     </section>
   );
 }
 
-// ============ DUPLEX INTRO ============
 function DuplexIntro() {
   const highlights = ["Terraza privada","Vista panorámica al mar","Zona de parrilla","Dos niveles","Cuarto y baño de servicio","Lavandería"];
   return (
     <section id="duplex" className="relative section-pad bg-navy overflow-hidden">
-      <div className="absolute inset-0 opacity-20">
-        <Image src="https://images.unsplash.com/photo-1416331108676-a22ccb276e35?w=1400&q=80" alt="Terraza frente al mar" fill className="object-cover" sizes="100vw" />
-      </div>
+      <div className="absolute inset-0 opacity-20"><Image src="https://images.unsplash.com/photo-1416331108676-a22ccb276e35?w=1400&q=80" alt="Terraza frente al mar" fill className="object-cover" sizes="100vw" /></div>
       <div className="relative z-10 container-narrow">
         <div className="max-w-3xl">
           <p className="eyebrow text-sand/70 mb-6">Unidades exclusivas</p>
@@ -341,21 +244,13 @@ function DuplexIntro() {
           <p className="font-serif text-2xl text-sand font-light italic mb-8">Más espacio para vivir frente al mar.</p>
           <div className="w-10 border-t border-sand/40 mb-8" />
           <p className="font-sans text-base text-white/70 leading-relaxed mb-12 max-w-xl">Solo tres dúplex con amplias terrazas privadas, vistas panorámicas al océano y espacios creados para compartir momentos inolvidables.</p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {highlights.map((h) => (
-              <div key={h} className="flex items-center gap-3 border border-white/20 px-4 py-3">
-                <Check size={14} className="text-sand flex-shrink-0" />
-                <span className="font-sans text-sm text-white/80">{h}</span>
-              </div>
-            ))}
-          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">{highlights.map((h) => (<div key={h} className="flex items-center gap-3 border border-white/20 px-4 py-3"><Check size={14} className="text-sand flex-shrink-0" /><span className="font-sans text-sm text-white/80">{h}</span></div>))}</div>
         </div>
       </div>
     </section>
   );
 }
 
-// ============ DUPLEX MODELS ============
 function DuplexModels() {
   const [active, setActive] = useState(0);
   const [lightbox, setLightbox] = useState(false);
@@ -363,85 +258,38 @@ function DuplexModels() {
   return (
     <section className="section-pad bg-beige/30">
       <div className="container-narrow">
-        <div className="flex gap-2 mb-10 flex-wrap">
-          {DUPLEXES.map((d, i) => (
-            <button key={d.id} onClick={() => setActive(i)} className={`px-6 py-2.5 font-sans text-sm font-medium transition-all ${i === active ? "bg-navy text-white" : "border border-sand text-charcoal/70 hover:border-navy"}`}>{d.title}</button>
-          ))}
-        </div>
+        <div className="flex gap-2 mb-10 flex-wrap">{DUPLEXES.map((d, i) => (<button key={d.id} onClick={() => setActive(i)} className={`px-6 py-2.5 font-sans text-sm font-medium transition-all ${i === active ? "bg-navy text-white" : "border border-sand text-charcoal/70 hover:border-navy"}`}>{d.title}</button>))}</div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <button onClick={() => setLightbox(true)} className="relative aspect-[4/3] w-full text-left cursor-zoom-in" aria-label="Ver plano">
-            <div className="w-full h-full bg-beige flex items-center justify-center border border-sand">
-              <div className="text-center p-8">
-                <div className="w-16 h-16 border border-sand/60 flex items-center justify-center mx-auto mb-4">
-                  <Building2 size={24} strokeWidth={1} className="text-charcoal/40" />
-                </div>
-                <p className="font-serif text-charcoal/50 text-lg">Plano {duplex.title}</p>
-                <p className="font-sans text-xs text-charcoal/40 mt-2">{duplex.area}</p>
-                <p className="font-sans text-xs text-ocean mt-3 hover:underline">Ampliar plano</p>
-              </div>
+          <button onClick={() => setLightbox(true)} className="relative w-full text-left cursor-zoom-in">
+            <div className="w-full aspect-[4/3] bg-beige flex items-center justify-center border border-sand">
+              <div className="text-center p-8"><div className="w-16 h-16 border border-sand/60 flex items-center justify-center mx-auto mb-4"><Building2 size={24} strokeWidth={1} className="text-charcoal/40" /></div><p className="font-serif text-charcoal/50 text-lg">Plano {duplex.title}</p><p className="font-sans text-xs text-charcoal/40 mt-2">{duplex.area}</p><p className="font-sans text-xs text-ocean mt-3 hover:underline">Ampliar plano</p></div>
             </div>
           </button>
           <div>
-            <div className="flex items-baseline gap-4 mb-6">
-              <h3 className="font-serif text-3xl text-charcoal font-light">{duplex.title}</h3>
-              <span className="font-sans text-lg text-ocean">{duplex.area}</span>
-            </div>
+            <div className="flex items-baseline gap-4 mb-6"><h3 className="font-serif text-3xl text-charcoal font-light">{duplex.title}</h3><span className="font-sans text-lg text-ocean">{duplex.area}</span></div>
             <div className="w-8 border-t border-sand mb-8" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-              <div>
-                <p className="font-sans text-xs tracking-widest uppercase text-charcoal/50 mb-4">Primer piso</p>
-                <ul className="space-y-2">
-                  {duplex.primerPiso.map((f: string) => (
-                    <li key={f} className="flex items-start gap-3"><Check size={13} className="text-ocean flex-shrink-0 mt-1" /><span className="font-sans text-sm text-charcoal/70">{f}</span></li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <p className="font-sans text-xs tracking-widest uppercase text-charcoal/50 mb-4">Segundo piso</p>
-                <ul className="space-y-2">
-                  {duplex.segundoPiso.map((f: string) => (
-                    <li key={f} className="flex items-start gap-3"><Check size={13} className="text-ocean flex-shrink-0 mt-1" /><span className="font-sans text-sm text-charcoal/70">{f}</span></li>
-                  ))}
-                </ul>
-              </div>
+              <div><p className="font-sans text-xs tracking-widest uppercase text-charcoal/50 mb-4">Primer piso</p><ul className="space-y-2">{duplex.primerPiso.map((f: string) => (<li key={f} className="flex items-start gap-3"><Check size={13} className="text-ocean flex-shrink-0 mt-1" /><span className="font-sans text-sm text-charcoal/70">{f}</span></li>))}</ul></div>
+              <div><p className="font-sans text-xs tracking-widest uppercase text-charcoal/50 mb-4">Segundo piso</p><ul className="space-y-2">{duplex.segundoPiso.map((f: string) => (<li key={f} className="flex items-start gap-3"><Check size={13} className="text-ocean flex-shrink-0 mt-1" /><span className="font-sans text-sm text-charcoal/70">{f}</span></li>))}</ul></div>
             </div>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary bg-navy hover:bg-ocean">Solicitar información</a>
           </div>
         </div>
-        {lightbox && (
-          <div className="fixed inset-0 z-50 bg-navy/90 flex items-center justify-center p-8" onClick={() => setLightbox(false)}>
-            <div className="bg-beige p-12 max-w-2xl w-full text-center">
-              <p className="font-serif text-2xl text-charcoal mb-4">Plano {duplex.title} — {duplex.area}</p>
-              <p className="font-sans text-sm text-charcoal/60 mb-6">El plano estará disponible bajo solicitud.</p>
-              <button className="font-sans text-sm text-ocean border-b border-ocean" onClick={() => setLightbox(false)}>Cerrar</button>
-            </div>
-          </div>
-        )}
+        {lightbox && (<div className="fixed inset-0 z-50 bg-navy/90 flex items-center justify-center p-8" onClick={() => setLightbox(false)}><div className="bg-beige p-12 max-w-2xl w-full text-center"><p className="font-serif text-2xl text-charcoal mb-4">Plano {duplex.title} — {duplex.area}</p><p className="font-sans text-sm text-charcoal/60 mb-6">El plano estará disponible bajo solicitud.</p><button className="font-sans text-sm text-ocean border-b border-ocean" onClick={() => setLightbox(false)}>Cerrar</button></div></div>)}
       </div>
     </section>
   );
 }
 
-// ============ TERRACES ============
 function TerracesSection() {
   return (
     <section className="section-pad bg-warm-white">
       <div className="container-narrow">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="eyebrow mb-6">Solo en los dúplex</p>
-            <h2 className="headline-lg text-charcoal mb-8">Tu propia terraza frente al mar.</h2>
-            <div className="w-10 border-t border-sand mb-8" />
-            <p className="font-sans text-base text-charcoal/75 leading-relaxed mb-6">Un espacio privado para reuniones, parrillas, celebraciones y momentos que merecen ser recordados.</p>
-            <p className="font-sans text-xs text-charcoal/50 tracking-widest uppercase border border-sand/60 inline-block px-4 py-2">Disponible exclusivamente en los dúplex.</p>
-          </div>
+          <div><p className="eyebrow mb-6">Solo en los dúplex</p><h2 className="headline-lg text-charcoal mb-8">Tu propia terraza frente al mar.</h2><div className="w-10 border-t border-sand mb-8" /><p className="font-sans text-base text-charcoal/75 leading-relaxed mb-6">Un espacio privado para reuniones, parrillas, celebraciones y momentos que merecen ser recordados.</p><p className="font-sans text-xs text-charcoal/50 tracking-widest uppercase border border-sand/60 inline-block px-4 py-2">Disponible exclusivamente en los dúplex.</p></div>
           <div className="grid grid-cols-2 gap-4">
-            <div className="relative aspect-[3/4] overflow-hidden">
-              <Image src="https://images.unsplash.com/photo-1416331108676-a22ccb276e35?w=600&q=85" alt="Terraza frente al mar al atardecer" fill className="object-cover" sizes="25vw" />
-            </div>
-            <div className="relative aspect-[3/4] overflow-hidden mt-8">
-              <Image src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=85" alt="Vista panorámica desde terraza" fill className="object-cover" sizes="25vw" />
-            </div>
+            <div className="relative aspect-[3/4] overflow-hidden"><Image src="https://images.unsplash.com/photo-1416331108676-a22ccb276e35?w=600&q=85" alt="Terraza frente al mar" fill className="object-cover" sizes="25vw" /></div>
+            <div className="relative aspect-[3/4] overflow-hidden mt-8"><Image src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=85" alt="Vista panorámica desde terraza" fill className="object-cover" sizes="25vw" /></div>
           </div>
         </div>
       </div>
@@ -449,48 +297,26 @@ function TerracesSection() {
   );
 }
 
-// ============ COMMON AREAS ============
 function CommonAreas() {
   const areas = [
-    { title: "Lobby y acceso", text: "Ingreso de diseño elegante con acabados en materiales naturales.", image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80" },
-    { title: "SUM", text: "Salón de usos múltiples para reuniones y celebraciones privadas.", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" },
-    { title: "Bar-Lounge", text: "Espacio social íntimo con vistas al Malécón.", image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" },
-    { title: "Coworking", text: "Área de trabajo equipada para el profesional moderno.", image: "https://images.unsplash.com/photo-1497366412874-3415097a27e7?w=600&q=80" },
+    {title:"Lobby y acceso",text:"Ingreso de diseño elegante con acabados en materiales naturales.",image:"https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80"},
+    {title:"SUM",text:"Salón de usos múltiples para reuniones y celebraciones privadas.",image:"https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80"},
+    {title:"Bar-Lounge",text:"Espacio social íntimo con vistas al Malécón.",image:"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80"},
+    {title:"Coworking",text:"Área de trabajo equipada para el profesional moderno.",image:"https://images.unsplash.com/photo-1497366412874-3415097a27e7?w=600&q=80"},
   ];
   return (
     <section id="areas-comunes" className="section-pad bg-beige/20">
       <div className="container-narrow">
-        <div className="mb-16">
-          <p className="eyebrow mb-5">Áreas comunes</p>
-          <h2 className="headline-lg text-charcoal">Espacios para vivir al máximo.</h2>
-        </div>
+        <div className="mb-16"><p className="eyebrow mb-5">Áreas comunes</p><h2 className="headline-lg text-charcoal">Espacios para vivir al máximo.</h2></div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {areas.map((area) => (
-            <div key={area.title} className="group">
-              <div className="relative aspect-[3/4] overflow-hidden mb-4">
-                <Image src={area.image} alt={area.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="25vw" />
-                <div className="absolute inset-0 bg-navy/20" />
-              </div>
-              <h3 className="font-serif text-lg text-charcoal mb-2">{area.title}</h3>
-              <p className="font-sans text-sm text-charcoal/65 leading-relaxed">{area.text}</p>
-            </div>
-          ))}
+          {areas.map((area) => (<div key={area.title} className="group"><div className="relative aspect-[3/4] overflow-hidden mb-4"><Image src={area.image} alt={area.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="25vw" /><div className="absolute inset-0 bg-navy/20" /></div><h3 className="font-serif text-lg text-charcoal mb-2">{area.title}</h3><p className="font-sans text-sm text-charcoal/65 leading-relaxed">{area.text}</p></div>))}
         </div>
-        <div className="border border-sand p-8 bg-warm-white">
-          <div className="flex items-start gap-4">
-            <UtensilsCrossed size={24} strokeWidth={1.25} className="text-ocean flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="font-serif text-xl text-charcoal mb-2">Centro gastronómico en el primer nivel</h3>
-              <p className="font-sans text-sm text-charcoal/70">Un espacio gastronómico exclusivo en planta baja, integrado al Malécón de Pimentel.</p>
-            </div>
-          </div>
-        </div>
+        <div className="border border-sand p-8 bg-warm-white"><div className="flex items-start gap-4"><UtensilsCrossed size={24} strokeWidth={1.25} className="text-ocean flex-shrink-0 mt-1" /><div><h3 className="font-serif text-xl text-charcoal mb-2">Centro gastronómico en el primer nivel</h3><p className="font-sans text-sm text-charcoal/70">Un espacio gastronómico exclusivo en planta baja, integrado al Malécón de Pimentel.</p></div></div></div>
       </div>
     </section>
   );
 }
 
-// ============ INVESTMENT CTA ============
 function InvestmentCTA() {
   return (
     <section className="section-pad bg-warm-white border-t border-b border-sand/40">
@@ -499,81 +325,40 @@ function InvestmentCTA() {
         <h2 className="headline-lg text-charcoal mb-8 max-w-3xl mx-auto">Una inversión con el mar como horizonte.</h2>
         <div className="w-10 border-t border-sand mb-8 mx-auto" />
         <p className="font-sans text-base text-charcoal/70 leading-relaxed max-w-2xl mx-auto mb-12">Residencial Pimentel combina ubicación, exclusividad y una propuesta arquitectónica diseñada para una de las zonas con mayor atractivo residencial y turístico de la costa norte.</p>
-        <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-          {["Primera línea frente al mar","A 15 minutos de Chiclayo","Solo 30 departamentos"].map((b) => (
-            <div key={b} className="flex items-center gap-3 justify-center">
-              <Check size={16} className="text-ocean flex-shrink-0" />
-              <span className="font-sans text-sm text-charcoal/80">{b}</span>
-            </div>
-          ))}
-        </div>
+        <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">{["Primera línea frente al mar","A 15 minutos de Chiclayo","Solo 30 departamentos"].map((b) => (<div key={b} className="flex items-center gap-3 justify-center"><Check size={16} className="text-ocean flex-shrink-0" /><span className="font-sans text-sm text-charcoal/80">{b}</span></div>))}</div>
         <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-base px-10 py-4">Recibir información de preventa</a>
       </div>
     </section>
   );
 }
 
-// ============ CONTACT FORM ============
 function ContactForm() {
   const [form, setForm] = useState({ name:"", phone:"", email:"", tipo:"", mensaje:"", consent:false });
   const [submitted, setSubmitted] = useState(false);
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.consent) return alert("Por favor acepta ser contactado.");
+    if (!form.consent) { alert("Por favor acepta ser contactado."); return; }
     setSubmitted(true);
   };
   return (
     <section id="contacto" className="section-pad bg-navy">
       <div className="container-narrow">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <p className="eyebrow text-sand/70 mb-6">Comienza ahora</p>
-            <h2 className="headline-lg text-white mb-6">Tu vida junto al mar empieza aquí.</h2>
-            <div className="w-10 border-t border-sand/40 mb-8" />
-            <p className="font-sans text-base text-white/65 leading-relaxed">Déjanos tus datos y un asesor de {PROJECT.developer} se pondrá en contacto contigo.</p>
-          </div>
+          <div><p className="eyebrow text-sand/70 mb-6">Comienza ahora</p><h2 className="headline-lg text-white mb-6">Tu vida junto al mar empieza aquí.</h2><div className="w-10 border-t border-sand/40 mb-8" /><p className="font-sans text-base text-white/65 leading-relaxed">Déjanos tus datos y un asesor de {PROJECT.developer} se pondrá en contacto contigo.</p></div>
           {!submitted ? (
             <form onSubmit={handleSubmit} className="space-y-5">
-              <div>
-                <label className="font-sans text-xs text-white/60 block mb-1.5 tracking-wide uppercase">Nombre y apellido *</label>
-                <input type="text" required value={form.name} onChange={(e) => setForm({...form,name:e.target.value})} className="w-full bg-white/10 border border-white/20 text-white placeholder-white/30 px-4 py-3 font-sans text-sm focus:outline-none focus:border-sand transition-colors" placeholder="Tu nombre completo" />
-              </div>
+              <div><label className="font-sans text-xs text-white/60 block mb-1.5 tracking-wide uppercase">Nombre y apellido *</label><input type="text" required value={form.name} onChange={(e) => setForm({...form,name:e.target.value})} className="w-full bg-white/10 border border-white/20 text-white placeholder-white/30 px-4 py-3 font-sans text-sm focus:outline-none focus:border-sand" placeholder="Tu nombre completo" /></div>
               <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="font-sans text-xs text-white/60 block mb-1.5 tracking-wide uppercase">Teléfono *</label>
-                  <input type="tel" required value={form.phone} onChange={(e) => setForm({...form,phone:e.target.value})} className="w-full bg-white/10 border border-white/20 text-white placeholder-white/30 px-4 py-3 font-sans text-sm focus:outline-none focus:border-sand transition-colors" placeholder="+51 9xx xxx xxx" />
-                </div>
-                <div>
-                  <label className="font-sans text-xs text-white/60 block mb-1.5 tracking-wide uppercase">Correo *</label>
-                  <input type="email" required value={form.email} onChange={(e) => setForm({...form,email:e.target.value})} className="w-full bg-white/10 border border-white/20 text-white placeholder-white/30 px-4 py-3 font-sans text-sm focus:outline-none focus:border-sand transition-colors" placeholder="tu@correo.com" />
-                </div>
+                <div><label className="font-sans text-xs text-white/60 block mb-1.5 tracking-wide uppercase">Teléfono *</label><input type="tel" required value={form.phone} onChange={(e) => setForm({...form,phone:e.target.value})} className="w-full bg-white/10 border border-white/20 text-white placeholder-white/30 px-4 py-3 font-sans text-sm focus:outline-none focus:border-sand" placeholder="+51" /></div>
+                <div><label className="font-sans text-xs text-white/60 block mb-1.5 tracking-wide uppercase">Correo *</label><input type="email" required value={form.email} onChange={(e) => setForm({...form,email:e.target.value})} className="w-full bg-white/10 border border-white/20 text-white placeholder-white/30 px-4 py-3 font-sans text-sm focus:outline-none focus:border-sand" placeholder="tu@correo.com" /></div>
               </div>
-              <div>
-                <label className="font-sans text-xs text-white/60 block mb-1.5 tracking-wide uppercase">Tipo de departamento</label>
-                <select value={form.tipo} onChange={(e) => setForm({...form,tipo:e.target.value})} className="w-full bg-white/10 border border-white/20 text-white px-4 py-3 font-sans text-sm focus:outline-none focus:border-sand transition-colors">
-                  <option value="" className="text-charcoal">Seleccionar</option>
-                  <option value="flat" className="text-charcoal">Flat</option>
-                  <option value="duplex" className="text-charcoal">Dúplex</option>
-                  <option value="no-se" className="text-charcoal">Aún no lo sé</option>
-                </select>
-              </div>
-              <div>
-                <label className="font-sans text-xs text-white/60 block mb-1.5 tracking-wide uppercase">Mensaje (opcional)</label>
-                <textarea value={form.mensaje} onChange={(e) => setForm({...form,mensaje:e.target.value})} rows={3} className="w-full bg-white/10 border border-white/20 text-white placeholder-white/30 px-4 py-3 font-sans text-sm focus:outline-none focus:border-sand transition-colors resize-none" placeholder="¿Alguna pregunta adicional?" />
-              </div>
-              <div className="flex items-start gap-3">
-                <input type="checkbox" id="consent" checked={form.consent} onChange={(e) => setForm({...form,consent:e.target.checked})} className="mt-1 accent-ocean" />
-                <label htmlFor="consent" className="font-sans text-sm text-white/60">Acepto ser contactado para recibir información del proyecto.</label>
-              </div>
+              <div><label className="font-sans text-xs text-white/60 block mb-1.5 tracking-wide uppercase">Tipo de departamento</label><select value={form.tipo} onChange={(e) => setForm({...form,tipo:e.target.value})} className="w-full bg-white/10 border border-white/20 text-white px-4 py-3 font-sans text-sm focus:outline-none focus:border-sand"><option value="" className="text-charcoal">Seleccionar</option><option value="flat" className="text-charcoal">Flat</option><option value="duplex" className="text-charcoal">Dúplex</option><option value="no-se" className="text-charcoal">Aún no lo sé</option></select></div>
+              <div><label className="font-sans text-xs text-white/60 block mb-1.5 tracking-wide uppercase">Mensaje (opcional)</label><textarea value={form.mensaje} onChange={(e) => setForm({...form,mensaje:e.target.value})} rows={3} className="w-full bg-white/10 border border-white/20 text-white placeholder-white/30 px-4 py-3 font-sans text-sm focus:outline-none focus:border-sand resize-none" placeholder="¿Alguna pregunta?" /></div>
+              <div className="flex items-start gap-3"><input type="checkbox" id="consent" checked={form.consent} onChange={(e) => setForm({...form,consent:e.target.checked})} className="mt-1 accent-ocean" /><label htmlFor="consent" className="font-sans text-sm text-white/60">Acepto ser contactado para recibir información del proyecto.</label></div>
               <button type="submit" className="w-full btn-primary bg-sand text-navy hover:bg-white hover:text-navy py-4 text-base">Solicitar información</button>
             </form>
           ) : (
-            <div className="bg-white/10 border border-sand/30 p-10 text-center">
-              <Check size={40} className="text-sand mx-auto mb-6" />
-              <h3 className="font-serif text-2xl text-white mb-4">¡Gracias!</h3>
-              <p className="font-sans text-sm text-white/65 mb-8">Hemos recibido tu solicitud. Un asesor de {PROJECT.developer} se pondrá en contacto contigo muy pronto.</p>
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary bg-[#25D366] hover:bg-[#1da851]">También puedes escribirnos por WhatsApp</a>
-            </div>
+            <div className="bg-white/10 border border-sand/30 p-10 text-center"><Check size={40} className="text-sand mx-auto mb-6" /><h3 className="font-serif text-2xl text-white mb-4">¡Gracias!</h3><p className="font-sans text-sm text-white/65 mb-8">Hemos recibido tu solicitud. Un asesor de {PROJECT.developer} se pondrá en contacto contigo pronto.</p><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary bg-[#25D366] hover:bg-[#1da851]">Escribirnos por WhatsApp</a></div>
           )}
         </div>
       </div>
@@ -581,52 +366,22 @@ function ContactForm() {
   );
 }
 
-// ============ FOOTER ============
 function FooterSection() {
-  const links = [
-    { label: "El Proyecto", href: "#proyecto" }, { label: "Departamentos", href: "#flats" },
-    { label: "Ubicación", href: "#ubicacion" }, { label: "Contacto", href: "#contacto" },
-    { label: "Política de privacidad", href: "#" },
-  ];
+  const links = [{label:"El Proyecto",href:"#proyecto"},{label:"Departamentos",href:"#flats"},{label:"Ubicación",href:"#ubicacion"},{label:"Contacto",href:"#contacto"},{label:"Política de privacidad",href:"#"}];
   return (
     <footer className="bg-charcoal py-16">
       <div className="container-narrow">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          <div>
-            <p className="font-serif text-2xl text-white font-light mb-1">Residencial Pimentel</p>
-            <p className="font-serif text-sm text-sand italic mb-6">{PROJECT.tagline}</p>
-            <p className="font-sans text-xs text-white/50 leading-relaxed">{PROJECT.address}</p>
-          </div>
-          <div>
-            <p className="font-sans text-xs tracking-widest uppercase text-white/40 mb-5">Navegación</p>
-            <ul className="space-y-3">
-              {links.map((l) => (
-                <li key={l.href}><a href={l.href} className="font-sans text-sm text-white/60 hover:text-sand transition-colors">{l.label}</a></li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <p className="font-sans text-xs tracking-widest uppercase text-white/40 mb-5">Contacto</p>
-            <div className="space-y-3">
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-white/60 hover:text-sand transition-colors">
-                <Phone size={14} /><span className="font-sans text-sm">{PROJECT.whatsappDisplay}</span>
-              </a>
-              <a href={`https://instagram.com/${PROJECT.instagram.replace('@','')}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-white/60 hover:text-sand transition-colors">
-                <Instagram size={14} /><span className="font-sans text-sm">{PROJECT.instagram}</span>
-              </a>
-            </div>
-          </div>
+          <div><p className="font-serif text-2xl text-white font-light mb-1">Residencial Pimentel</p><p className="font-serif text-sm text-sand italic mb-6">{PROJECT.tagline}</p><p className="font-sans text-xs text-white/50 leading-relaxed">{PROJECT.address}</p></div>
+          <div><p className="font-sans text-xs tracking-widest uppercase text-white/40 mb-5">Navegación</p><ul className="space-y-3">{links.map((l) => (<li key={l.href}><a href={l.href} className="font-sans text-sm text-white/60 hover:text-sand transition-colors">{l.label}</a></li>))}</ul></div>
+          <div><p className="font-sans text-xs tracking-widest uppercase text-white/40 mb-5">Contacto</p><div className="space-y-3"><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-white/60 hover:text-sand transition-colors"><Phone size={14} /><span className="font-sans text-sm">{PROJECT.whatsappDisplay}</span></a><a href={`https://instagram.com/${PROJECT.instagram.replace('@','')}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-white/60 hover:text-sand transition-colors"><Instagram size={14} /><span className="font-sans text-sm">{PROJECT.instagram}</span></a></div></div>
         </div>
-        <div className="border-t border-white/10 pt-8">
-          <p className="font-sans text-xs text-white/30 leading-relaxed">Las imágenes, acabados, mobiliario y elementos decorativos son referenciales y pueden estar sujetos a modificaciones durante el desarrollo del proyecto.</p>
-          <p className="font-sans text-xs text-white/20 mt-3">&copy; {new Date().getFullYear()} {PROJECT.name}. Comercializado por {PROJECT.developer}.</p>
-        </div>
+        <div className="border-t border-white/10 pt-8"><p className="font-sans text-xs text-white/30 leading-relaxed">Las imágenes, acabados, mobiliario y elementos decorativos son referenciales y pueden estar sujetos a modificaciones durante el desarrollo del proyecto.</p><p className="font-sans text-xs text-white/20 mt-3">&copy; {new Date().getFullYear()} {PROJECT.name}. Comercializado por {PROJECT.developer}.</p></div>
       </div>
     </footer>
   );
 }
 
-// ============ FLOATING WHATSAPP ============
 function FloatingWhatsApp() {
   return (
     <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#1da851] flex items-center justify-center shadow-lg transition-all hover:scale-110 rounded-full">
@@ -635,8 +390,7 @@ function FloatingWhatsApp() {
   );
 }
 
-// ============ MAIN PAGE ============
-export default function Home() {
+export default function LandingPage() {
   return (
     <>
       <Navigation />
