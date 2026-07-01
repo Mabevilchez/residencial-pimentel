@@ -193,10 +193,17 @@ function LifestyleSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="order-2 lg:order-1"><p className="eyebrow mb-6">Estilo de vida</p><h2 className="headline-lg text-charcoal mb-8">Diseñado para que el mar sea parte de tu hogar.</h2><div className="w-10 border-t border-sand mb-6" /><p className="font-sans text-base text-charcoal/75 leading-relaxed">Espacios pensados para confort, ventilación y vistas al océano.</p></div>
           <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
-            <div className="relative aspect-[3/4] overflow-hidden"><Image src="24. DORMITORIO PRINCIPAL.png" alt="Interior con vista al mar" fill className="object-cover" /></div>
+            <div className="relative aspect-[3/4] overflow-hidden"><Image src="/24.%20TDORMITORIO%20TPRINCIPAL.png" alt="Interior con vista al mar" fill className="object-cover" /></div>
             <div className="flex flex-col gap-4">
-              <div className="relative aspect-square overflow-hidden"><Image src="30. TERRAZA DUPLEX02.png" alt="Cocina moderna" fill className="object-cover" /></div>
-              <div className="relative aspect-square overflow-hidden"><Image src="26. SALA DE DUPLEX01.png" alt="Balcón frente al mar" fill className="object-cover" /></div>
+              <div className="relative aspect-square overflow-hidden">
+  <Image
+    src="/terraza-duplex-02.png"
+    alt="Terraza del dúplex"
+    fill
+    className="object-cover"
+  />
+</div>
+              <div className="relative aspect-square overflow-hidden"><Image src="/26.%20TSALA%20TDE%20TDUPLEX01.png" alt="Balcón frente al mar" fill className="object-cover" /></div>
             </div>
           </div>
         </div>
