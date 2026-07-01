@@ -91,7 +91,7 @@ function ProjectOverview() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="relative">
             <div className="relative aspect-[3/4] overflow-hidden">
-              <Image src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=900&q=85" alt="Render exterior Residencial Pimentel" fill className="object-cover" sizes="(max-width: 1024px) 100vw" />
+              <Image src="01. FACHADA DIURNA MALECON SEOANE.png" alt="Render exterior Residencial Pimentel" fill className="object-cover" sizes="(max-width: 1024px) 100vw" />
             </div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 border-r border-b border-sand/60 hidden md:block" />
           </div>
@@ -193,10 +193,10 @@ function LifestyleSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="order-2 lg:order-1"><p className="eyebrow mb-6">Estilo de vida</p><h2 className="headline-lg text-charcoal mb-8">Diseñado para que el mar sea parte de tu hogar.</h2><div className="w-10 border-t border-sand mb-6" /><p className="font-sans text-base text-charcoal/75 leading-relaxed">Espacios pensados para confort, ventilación y vistas al océano.</p></div>
           <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
-            <div className="relative aspect-[3/4] overflow-hidden"><Image src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=600&q=85" alt="Interior con vista al mar" fill className="object-cover" /></div>
+            <div className="relative aspect-[3/4] overflow-hidden"><Image src="24. DORMITORIO PRINCIPAL.png" alt="Interior con vista al mar" fill className="object-cover" /></div>
             <div className="flex flex-col gap-4">
-              <div className="relative aspect-square overflow-hidden"><Image src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=85" alt="Cocina moderna" fill className="object-cover" /></div>
-              <div className="relative aspect-square overflow-hidden"><Image src="https://images.unsplash.com/photo-1515263487990-61b07816b324?w=600&q=85" alt="Balcón frente al mar" fill className="object-cover" /></div>
+              <div className="relative aspect-square overflow-hidden"><Image src="30. TERRAZA DUPLEX02.png" alt="Cocina moderna" fill className="object-cover" /></div>
+              <div className="relative aspect-square overflow-hidden"><Image src="26. SALA DE DUPLEX01.png" alt="Balcón frente al mar" fill className="object-cover" /></div>
             </div>
           </div>
         </div>
@@ -237,7 +237,7 @@ function DuplexIntro() {
   const highlights = ["Terraza privada","Vista panorámica al mar","Zona de parrilla","Dos niveles","Cuarto y baño de servicio","Lavandería"];
   return (
     <section id="duplex" className="relative section-pad bg-navy overflow-hidden">
-      <div className="absolute inset-0 opacity-20"><Image src="https://images.unsplash.com/photo-1416331108676-a22ccb276e35?w=1400&q=80" alt="Terraza frente al mar" fill className="object-cover" /></div>
+      <div className="absolute inset-0 opacity-20"><Image src="https://images.unsplash.com/photo-1414609245224-afa02bfb3fda?q=80&w=989&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Terraza frente al mar" fill className="object-cover" /></div>
       <div className="relative z-10 container-narrow">
         <div className="max-w-3xl">
           <p className="eyebrow text-sand/70 mb-6">Unidades exclusivas</p>
