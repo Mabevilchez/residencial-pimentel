@@ -55,7 +55,7 @@ function HeroSection() {
   return (
     <section id="hero" className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
-        <Image src="https://images.unsplash.com/photo-8lVHs1HcEEI?w=1920&q=90" alt="Costa de Pimentel al atardecer" fill priority quality={90} className="object-cover object-center" />
+        <Image src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=90" alt="Costa de Pimentel al atardecer" fill priority quality={90} className="object-cover object-center" />
         <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/40 to-navy/70" />
       </div>
       <div className="relative z-10 container-narrow w-full flex flex-col items-start justify-center pt-32 pb-24">
