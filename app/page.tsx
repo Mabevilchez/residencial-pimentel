@@ -133,7 +133,7 @@ function WhySection() {
       title: "Vistas directas al mar y al muelle",
       text: "El proyecto integra el oceano a la vida cotidiana, con vistas desde el dormitorio principal, la sala y los espacios exteriores.",
       aspect: "aspect-[4/5]",
-      image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=85",
+      image: "https://images.unsplash.com/photo-1414609245224-afa02bfb3fda?q=80&w=989&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       alt: "Vistas al mar",
     },
     {
