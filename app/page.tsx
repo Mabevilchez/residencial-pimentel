@@ -214,10 +214,10 @@ function LifestyleSection() {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
     <div className="order-2 lg:order-1"><p className="eyebrow mb-6">Estilo de vida</p><h2 className="headline-lg text-charcoal mb-8">Disenado para que el mar sea parte de tu hogar.</h2><div className="w-10 border-t border-sand mb-6" /><p className="font-sans text-base text-charcoal/75 leading-relaxed">Espacios pensados para confort, ventilacion y vistas al oceano.</p></div>
     <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
-    <div className="relative aspect-[3/4] overflow-hidden"><Image src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=600&q=85" alt="Interior con vista al mar" fill className="object-cover" /></div>
+    <div className="relative aspect-[3/4] overflow-hidden"><Image src="/lobby/24.%20DORMITORIO%20PRINCIPAL.png" alt="Dormitorio principal del departamento" fill className="object-cover" /></div>
     <div className="flex flex-col gap-4">
-    <div className="relative aspect-square overflow-hidden"><Image src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=85" alt="Cocina moderna" fill className="object-cover" /></div>
-    <div className="relative aspect-square overflow-hidden"><Image src="https://images.unsplash.com/photo-1515263487990-61b07816b324?w=600&q=85" alt="Balcon frente al mar" fill className="object-cover" /></div>
+    <div className="relative aspect-square overflow-hidden"><Image src="/lobby/26.%20SALA%20DE%20DUPLEX01.png" alt="Sala del duplex frente al mar" fill className="object-cover" /></div>
+    <div className="relative aspect-square overflow-hidden"><Image src="/lobby/30.%20TERRAZA%20DUPLEX02.png" alt="Terraza del duplex frente al mar" fill className="object-cover" /></div>
     </div>
     </div>
     </div>
@@ -320,10 +320,10 @@ function TerracesSection() {
 
 function CommonAreas() {
   const areas = [
-    {title:"Lobby y acceso",text:"Ingreso de diseno elegante con acabados en materiales naturales.",image:"https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80"},
-    {title:"SUM",text:"Salon de usos multiples para reuniones y celebraciones privadas.",image:"https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80"},
-    {title:"Bar-Lounge",text:"Espacio social intimo con vistas al Malecon.",image:"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80"},
-    {title:"Coworking",text:"Area de trabajo equipada para el profesional moderno.",image:"https://images.unsplash.com/photo-1497366412874-3415097a27e7?w=600&q=80"},
+    {title:"Lobby y acceso",text:"Ingreso de diseno elegante con acabados en materiales naturales.",image:"/lobby/02.%20INGRESO%20RESIDENCIAL.png"},
+    {title:"SUM",text:"Salon de usos multiples para reuniones y celebraciones privadas.",image:"/lobby/18.%20TERRAZA%20SUM.png"},
+    {title:"Bar-Lounge",text:"Espacio social intimo con vistas al Malecon.",image:"/lobby/16.%20SUM.png"},
+    {title:"Coworking",text:"Area de trabajo equipada para el profesional moderno.",image:"/lobby/19.%20COWORKING.png"},
     ];
   return (
     <section id="areas-comunes" className="section-pad bg-beige/20">
