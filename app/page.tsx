@@ -238,18 +238,19 @@ function CanvaPresentationSection() {
     <h2 className="headline-lg text-charcoal mb-4">Explora nuestros departamentos</h2>
     <p className="font-sans text-base text-charcoal/70 leading-relaxed max-w-2xl mx-auto">Recorre la presentación interactiva para conocer los modelos, distribuciones, metrajes y espacios de Residencial Pimentel.</p>
     </div>
-    <div className="relative w-full aspect-[16/9] min-h-[520px] md:min-h-[680px] overflow-hidden border border-sand/60 bg-beige shadow-sm">
+    <div className="relative w-full aspect-video overflow-hidden rounded-lg border border-sand/60 bg-beige shadow-sm">
     <iframe
-      src="https://www.canva.com/design/DAHOCrB0C2Q/view?embed"
+      src="https://www.canva.com/design/DAHOCrB0C2Q/tHmI5gbffbvGROIzKOGWVQ/view?embed"
       title="Presentación interactiva de Residencial Pimentel"
       loading="lazy"
+      allow="fullscreen"
       allowFullScreen
       className="absolute inset-0 h-full w-full border-0"
     />
     </div>
     <div className="mt-8 flex justify-center">
     <a
-      href="https://canva.link/i5m8t856tcgs4a8"
+      href="https://www.canva.com/design/DAHOCrB0C2Q/tHmI5gbffbvGROIzKOGWVQ/view?utm_content=DAHOCrB0C2Q&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
       target="_blank"
       rel="noopener noreferrer"
       className="btn-primary inline-flex items-center gap-2"
