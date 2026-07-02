@@ -91,7 +91,7 @@ function ProjectOverview() {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
     <div className="relative">
     <div className="relative aspect-[3/4] overflow-hidden">
-    <Image src="public/lobby/FACHADADIURNAMALECON.png" alt="Render exterior Residencial Pimentel" fill className="object-cover" sizes="(max-width: 1024px) 100vw" />
+    <Image src="/lobby/fachadadiurnamalecon.png" alt="Render exterior Residencial Pimentel" fill className="object-cover" sizes="(max-width: 1024px) 100vw" />
     </div>
     <div className="absolute -bottom-6 -right-6 w-32 h-32 border-r border-b border-sand/60 hidden md:block" />
     </div>
