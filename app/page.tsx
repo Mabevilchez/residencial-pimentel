@@ -47,7 +47,7 @@ function Navigation() {
       <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)} className="mt-4 px-8 py-3 bg-ocean text-white font-sans text-sm font-medium">Solicitar info</a>
       </div>
     )}
-    </>>
+    </>
     );
 }
 
