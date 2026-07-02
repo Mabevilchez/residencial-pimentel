@@ -167,10 +167,8 @@ function ImageBreak() {
   return (
     <section className="relative w-full min-h-[60vh] flex items-start justify-start overflow-hidden">
     <div className="absolute inset-0"><Image src="https://images.unsplash.com/photo-1625175006425-d61920aa8794?q=80&w=1920&auto=format&fit=crop" alt="Costa de Pimentel" fill className="object-cover" /></div>
-    <div className="relative z-10 container-narrow w-full pt-10 md:pt-14">
-    <div className="w-fit max-w-4xl bg-white/85 backdrop-blur-sm px-5 py-4 md:px-8 md:py-6">
-    <h2 className="font-serif text-4xl md:text-6xl font-light text-ocean">Donde cada día empieza y termina cerca del mar</h2>
-    </div>
+    <div className="relative z-10 w-full pt-3 md:pt-5 pl-2 md:pl-4">
+    <h2 className="font-serif text-4xl md:text-6xl font-light text-ocean max-w-4xl leading-tight">Donde cada día empieza y termina cerca del mar</h2>
     </div>
     </section>
     );
