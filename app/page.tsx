@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Menu, X, ChevronDown, Building2, Home, Layers, BedDouble, Waves, UtensilsCrossed, Car, Check, MessageCircle, ArrowRight } from "lucide-react";
-import { PROJECT, FLATS, DUPLEXES, NAV_LINKS } from "@/lib/data";
+import { PROJECT, NAV_LINKS } from "@/lib/data";
 
 const WHATSAPP_URL = `https://wa.me/${PROJECT.whatsapp}?text=${encodeURIComponent(PROJECT.whatsappMessage)}`;
 
@@ -67,7 +67,7 @@ function HeroSection() {
     <div className="w-12 border-t border-sand/50 mb-8" />
     <p className="font-sans text-base md:text-lg font-light text-white/80 max-w-xl mb-10 leading-relaxed">Departamentos en primera linea frente al mar, disenados para disfrutar en familia y mas.</p>
     <div className="flex flex-col sm:flex-row gap-4 mb-12">
-    <a href="#flats" className="btn-primary">Conoce los departamentos</a>
+    <a href="#departamentos" className="btn-primary">Conoce los departamentos</a>
     <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-outline">Hablar por WhatsApp</a>
     </div>
     <p className="font-sans text-xs text-white/50 tracking-widest uppercase">Solo 30 departamentos · 27 flats · 3 duplex</p>
@@ -180,15 +180,14 @@ function LocationSection() {
     <div className="container-narrow">
     <div className="mb-12"><p className="eyebrow mb-5">Ubicacion estrategica</p><h2 className="headline-lg text-charcoal mb-4">Todo cerca. El mar aun mas.</h2><p className="font-sans text-base text-charcoal/75 leading-relaxed max-w-xl">Residencial Pimentel se ubica en un entorno con facil acceso a servicios y conectividad.</p></div>
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-    <div className="relative aspect-[4/3] bg-beige border border-sand overflow-hidden flex items-center justify-center">
-    <div className="text-center p-8">
-    <div className="w-4 h-4 bg-ocean rounded-full mx-auto mb-3 ring-4 ring-ocean/20" />
-    <p className="font-serif text-navy text-lg font-light">Residencial Pimentel</p>
-    <p className="font-sans text-xs text-charcoal/60 mt-1">Malecon de Pimentel</p>
-    <div className="flex flex-wrap gap-2 mt-6 justify-center">
-      {["Malecon","Playa","Muelle historico","Club Casino","Restaurantes","Ruta Chiclayo","Aeropuerto"].map(l => (<span key={l} className="text-xs bg-ocean/10 text-ocean px-2 py-1 font-sans rounded">{l}</span>))}
-    </div>
-    </div>
+    <div className="relative aspect-[4/3] bg-beige border border-sand overflow-hidden">
+    <Image
+      src="/lobby/360_F_524126883_Z9HJX7FOnKZpJ7NCaTAzxS8Hi6U2SAuJ.jpg"
+      alt="Ubicacion de Residencial Pimentel frente al malecon"
+      fill
+      className="object-cover"
+      sizes="(max-width: 1024px) 100vw, 50vw"
+    />
     </div>
     <div className="space-y-10">
     <div>
@@ -199,7 +198,7 @@ function LocationSection() {
     <p className="eyebrow mb-5 flex items-center gap-2"><Car size={14} /> En auto</p>
     <ul className="space-y-4">{enauto.map((item) => (<li key={item.label} className="flex items-baseline gap-4 border-b border-sand/40 pb-4"><span className="font-serif text-ocean text-xl">{item.time}</span><span className="font-sans text-sm text-charcoal/70">{item.label}</span></li>))}</ul>
     </div>
-    <a href="https://maps.google.com/?q=Malecon+Pimentel+Peru" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-sans text-sm text-ocean border-b border-ocean/20">Abrir en Google Maps <ArrowRight size={14} /></a>
+    <a href="https://maps.app.goo.gl/VynUmqKdUicn2C7n8" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-sans text-sm text-ocean border-b border-ocean/20">Abrir en Google Maps <ArrowRight size={14} /></a>
     </div>
     </div>
     </div>
@@ -226,77 +225,36 @@ function LifestyleSection() {
     );
 }
 
-function FlatsSection() {
-  const [active, setActive] = useState(0);
-  const [lightbox, setLightbox] = useState(false);
-  const flat = FLATS[active];
+function CanvaPresentationSection() {
   return (
-    <section id="flats" className="section-pad bg-warm-white">
+    <section id="departamentos" className="section-pad bg-warm-white scroll-mt-20">
+    <span id="flats" className="block scroll-mt-20" aria-hidden="true" />
+    <span id="duplex" className="block scroll-mt-20" aria-hidden="true" />
     <div className="container-narrow">
-    <div className="mb-12"><p className="eyebrow mb-5">Unidades residenciales</p><h2 className="headline-lg text-charcoal mb-2">Nuestros Flats</h2><p className="font-serif text-xl text-ocean mb-6">Encuentra el departamento ideal para ti.</p></div>
-    <div className="flex gap-2 mb-10">{FLATS.map((f, i) => (<button key={f.id} onClick={() => setActive(i)} className={`px-6 py-2.5 font-sans text-sm font-medium transition-all ${i === active ? "bg-ocean text-white" : "bg-white/10 text-charcoal"}`}>{f.title}</button>))}</div>
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-    <button onClick={() => setLightbox(true)} className="relative w-full text-left cursor-zoom-in">
-    <div className="w-full aspect-[4/3] bg-beige flex items-center justify-center border border-sand">
-    <div className="text-center p-8"><div className="w-16 h-16 border border-sand/60 flex items-center justify-center mx-auto mb-4"><Home size={24} strokeWidth={1} className="text-charcoal/60" /></div><p className="font-serif text-lg text-charcoal/80">{flat.title}</p></div>
+    <div className="mb-10 text-center">
+    <p className="eyebrow mb-5">Conoce el proyecto</p>
+    <h2 className="headline-lg text-charcoal mb-4">Explora nuestros departamentos</h2>
+    <p className="font-sans text-base text-charcoal/70 leading-relaxed max-w-2xl mx-auto">Recorre la presentacion interactiva para conocer los modelos, distribuciones, metrajes y espacios de Residencial Pimentel.</p>
     </div>
-    </button>
-    <div>
-    <div className="flex items-baseline gap-4 mb-6"><h3 className="font-serif text-3xl text-charcoal font-light">{flat.title}</h3><span className="font-sans text-lg text-ocean">{flat.area}</span></div>
-    <div className="w-8 border-t border-sand mb-8" />
-    <ul className="space-y-3 mb-10">{flat.features.map((feature) => (<li key={feature} className="flex items-start gap-3"><Check size={14} className="text-ocean flex-shrink-0 mt-1" /><span className="font-sans text-sm text-charcoal/80">{feature}</span></li>))}</ul>
-    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">Consultar disponibilidad</a>
+    <div className="relative w-full aspect-[16/9] min-h-[520px] md:min-h-[680px] overflow-hidden border border-sand/60 bg-beige shadow-sm">
+    <iframe
+      src="https://www.canva.com/design/DAHOCrB0C2Q/view?embed"
+      title="Presentacion interactiva de Residencial Pimentel"
+      loading="lazy"
+      allowFullScreen
+      className="absolute inset-0 h-full w-full border-0"
+    />
     </div>
+    <div className="mt-8 flex justify-center">
+    <a
+      href="https://canva.link/i5m8t856tcgs4a8"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="btn-primary inline-flex items-center gap-2"
+    >
+      Abrir presentacion en pantalla completa <ArrowRight size={16} />
+    </a>
     </div>
-      {lightbox && (<div className="fixed inset-0 z-50 bg-navy/90 flex items-center justify-center p-8" onClick={() => setLightbox(false)}><div className="bg-beige p-12 max-w-2xl w-full text-center">Imagen del flat</div></div>)}
-    </div>
-    </section>
-    );
-}
-
-function DuplexIntro() {
-  const highlights = ["Terraza privada con parrilla","Vista panoramica al oceano","Zona de lavanderia","Cuarto de servicio","Bano de visitas","Cocina equipada"];
-  return (
-    <section id="duplex" className="section-pad bg-navy">
-    <div className="container-narrow">
-    <div className="max-w-2xl">
-    <p className="eyebrow text-sand/70 mb-6">Exclusivos</p>
-    <h2 className="headline-lg text-white mb-4">Nuestros duplex</h2>
-    <p className="font-serif text-2xl text-sand font-light italic mb-8">Mas espacio para vivir frente al mar.</p>
-    <div className="w-10 border-t border-sand/40 mb-8" />
-    <p className="font-sans text-base text-white/70 leading-relaxed mb-12 max-w-xl">Solo tres duplex con amplias terrazas privadas, vistas panoramicas al oceano y espacios creados para comodidad.</p>
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">{highlights.map((h) => (<div key={h} className="flex items-center gap-3 border border-white/20 px-4 py-3"><Check size={14} className="text-sand flex-shrink-0 mt-1" /><span className="font-sans text-sm text-white/80">{h}</span></div>))}</div>
-    </div>
-    </div>
-    </section>
-    );
-}
-
-function DuplexModels() {
-  const [active, setActive] = useState(0);
-  const [lightbox, setLightbox] = useState(false);
-  const duplex = DUPLEXES[active];
-  return (
-    <section className="section-pad bg-beige/30">
-    <div className="container-narrow">
-    <div className="flex gap-2 mb-10 flex-wrap">{DUPLEXES.map((d, i) => (<button key={d.id} onClick={() => setActive(i)} className={`px-6 py-2.5 font-sans text-sm font-medium transition-all ${i === active ? "bg-ocean text-white" : "bg-white/10 text-charcoal"}`}>{d.title}</button>))}</div>
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-    <button onClick={() => setLightbox(true)} className="relative w-full text-left cursor-zoom-in">
-    <div className="w-full aspect-[4/3] bg-beige flex items-center justify-center border border-sand">
-    <div className="text-center p-8"><div className="w-16 h-16 border border-sand/60 flex items-center justify-center mx-auto mb-4"><Building2 size={24} strokeWidth={1} className="text-charcoal/60" /></div><p className="font-serif text-lg text-charcoal/80">{duplex.title}</p></div>
-    </div>
-    </button>
-    <div>
-    <div className="flex items-baseline gap-4 mb-6"><h3 className="font-serif text-3xl text-charcoal font-light">{duplex.title}</h3><span className="font-sans text-lg text-ocean">{duplex.area}</span></div>
-    <div className="w-8 border-t border-sand mb-8" />
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-    <div><p className="font-sans text-xs tracking-widest uppercase text-charcoal/50 mb-4">Primer piso</p><ul className="space-y-2">{duplex.primerPiso.map((f: string) => (<li key={f} className="text-sm text-charcoal/80">{f}</li>))}</ul></div>
-    <div><p className="font-sans text-xs tracking-widest uppercase text-charcoal/50 mb-4">Segundo piso</p><ul className="space-y-2">{duplex.segundoPiso.map((f: string) => (<li key={f} className="text-sm text-charcoal/80">{f}</li>))}</ul></div>
-    </div>
-    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary bg-navy hover:bg-ocean">Solicitar informacion</a>
-    </div>
-    </div>
-      {lightbox && (<div className="fixed inset-0 z-50 bg-navy/90 flex items-center justify-center p-8" onClick={() => setLightbox(false)}><div className="bg-beige p-12 max-w-2xl w-full text-center">Imagen del duplex</div></div>)}
     </div>
     </section>
     );
@@ -309,8 +267,8 @@ function TerracesSection() {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
     <div><p className="eyebrow mb-6">Solo en los duplex</p><h2 className="headline-lg text-charcoal mb-8">Tu propia terraza frente al mar.</h2><div className="w-10 border-t border-sand mb-6" /></div>
     <div className="grid grid-cols-2 gap-4">
-    <div className="relative aspect-[3/4] overflow-hidden"><Image src="https://images.unsplash.com/photo-1416331108676-a22ccb276e35?w=600&q=85" alt="Terraza frente al mar" fill className="object-cover" /></div>
-    <div className="relative aspect-[3/4] overflow-hidden mt-8"><Image src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=85" alt="Vista panoramica desde terraza" fill className="object-cover" /></div>
+    <div className="relative aspect-[3/4] overflow-hidden"><Image src="/lobby/30.%20TERRAZA%20DUPLEX02.png" alt="Terraza del duplex frente al mar" fill className="object-cover" /></div>
+    <div className="relative aspect-[3/4] overflow-hidden mt-8"><Image src="/lobby/29.%20TERRAZA%20DUPLEX01.png" alt="Terraza privada del duplex" fill className="object-cover" /></div>
     </div>
     </div>
     </div>
@@ -421,9 +379,7 @@ export default function Page() {
     <ImageBreak />
     <LocationSection />
     <LifestyleSection />
-    <FlatsSection />
-    <DuplexIntro />
-    <DuplexModels />
+    <CanvaPresentationSection />
     <TerracesSection />
     <CommonAreas />
     <InvestmentCTA />
