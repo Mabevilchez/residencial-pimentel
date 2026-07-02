@@ -125,8 +125,8 @@ function WhySection() {
       title: "Ubicacion privilegiada",
       text: "En la primera fila del Malecon de Pimentel, a pocos pasos de la playa, el muelle historico y los principales puntos de interes.",
       aspect: "aspect-[3/4]",
-      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=85",
-      alt: "Playa Pimentel",
+      image: "/lobby/Pimentel%201.jpg.jpeg",
+      alt: "Ubicacion privilegiada en Pimentel",
     },
     {
       number: "02",
@@ -141,8 +141,8 @@ function WhySection() {
       title: "Inversion inteligente",
       text: "Una propiedad en una zona de alta plusvalia, a solo 15 minutos de Chiclayo, dentro de un entorno tranquilo y exclusivo.",
       aspect: "aspect-[3/4]",
-      image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900&q=85",
-      alt: "Frente del mar",
+      image: "/lobby/2AEFB28E-C08B-4E5F-8BBE-299D8DFD5DBD_1_105_c.jpeg",
+      alt: "Inversion inmobiliaria frente al mar",
     },
   ];
   return (
@@ -262,10 +262,10 @@ function CanvaPresentationSection() {
 
 function TerracesSection() {
   return (
-    <section className="section-pad bg-warm-white">
+    <section className="section-pad bg-[#D8C39A]">
     <div className="container-narrow">
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-    <div><p className="eyebrow mb-6">Solo en los duplex</p><h2 className="headline-lg text-charcoal mb-8">Tu propia terraza frente al mar.</h2><div className="w-10 border-t border-sand mb-6" /></div>
+    <div><p className="eyebrow mb-6 text-navy/70">Solo en los duplex</p><h2 className="headline-lg text-charcoal mb-8">Tu propia terraza frente al mar.</h2><div className="w-10 border-t border-navy/30 mb-6" /></div>
     <div className="grid grid-cols-2 gap-4">
     <div className="relative aspect-[3/4] overflow-hidden"><Image src="/lobby/30.%20TERRAZA%20DUPLEX02.png" alt="Terraza del duplex frente al mar" fill className="object-cover" /></div>
     <div className="relative aspect-[3/4] overflow-hidden mt-8"><Image src="/lobby/29.%20TERRAZA%20DUPLEX01.png" alt="Terraza privada del duplex" fill className="object-cover" /></div>
@@ -298,14 +298,24 @@ function CommonAreas() {
 
 function InvestmentCTA() {
   return (
-    <section className="section-pad bg-beige/50 text-center">
-    <div className="container-narrow">
-    <p className="eyebrow mb-8 mx-auto">Preventa exclusiva</p>
-    <h2 className="headline-lg text-charcoal mb-8 max-w-3xl mx-auto">Una inversion con el mar como horizonte.</h2>
-    <div className="w-10 border-t border-sand mb-8 mx-auto" />
-    <p className="font-sans text-base text-charcoal/70 leading-relaxed max-w-2xl mx-auto mb-12">Residencial Pimentel combina ubicacion, exclusividad y una propuesta arquitectonica disenada para disfrutar.</p>
-    <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">{["Primera linea frente al mar","A 15 minutos de Chiclayo","Solo 30 departamentos"].map((b) => (<div key={b} className="text-sm text-charcoal/75">{b}</div>))}</div>
-    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-base px-10 py-4">Recibir informacion de preventa</a>
+    <section className="relative section-pad text-center overflow-hidden">
+    <div className="absolute inset-0">
+    <Image
+      src="https://images.unsplash.com/photo-1726017803967-9870dc6a3ccc?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="Vista del mar en Pimentel"
+      fill
+      className="object-cover"
+      sizes="100vw"
+    />
+    <div className="absolute inset-0 bg-navy/65" />
+    </div>
+    <div className="relative z-10 container-narrow">
+    <p className="eyebrow text-sand mb-8 mx-auto">Preventa exclusiva</p>
+    <h2 className="headline-lg text-white mb-8 max-w-3xl mx-auto">Una inversion con el mar como horizonte.</h2>
+    <div className="w-10 border-t border-sand/70 mb-8 mx-auto" />
+    <p className="font-sans text-base text-white/80 leading-relaxed max-w-2xl mx-auto mb-12">Residencial Pimentel combina ubicacion, exclusividad y una propuesta arquitectonica disenada para disfrutar.</p>
+    <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">{["Primera linea frente al mar","A 15 minutos de Chiclayo","Solo 30 departamentos"].map((b) => (<div key={b} className="text-sm text-white/85">{b}</div>))}</div>
+    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary bg-sand text-navy hover:bg-white hover:text-navy text-base px-10 py-4">Recibir informacion de preventa</a>
     </div>
     </section>
     );
