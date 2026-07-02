@@ -120,9 +120,9 @@ function ProjectOverview() {
 
 function WhySection() {
   const reasons = [
-    { number: "01", title: "Ubicacion privilegiada", text: "En la primera fila del Malecon de Pimentel, a pocos pasos de la playa, el muelle historico y los principales puntos de interes.", aspect: "aspect-[3/4]", image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=85", alt: "Playa Pimentel" },
-    { number: "02", title: "Vistas directas al mar y al muelle", text: "El proyecto integra el oceano a la vida cotidiana, con vistas desde el dormitorio principal, la sala y los espacios exteriores.", aspect: "aspect-[4/5]", image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=85", alt: "Vistas al mar" },
-    { number: "03", title: "Inversion inteligente", text: "Una propiedad en una zona de alta plusvalia, a solo 15 minutos de Chiclayo, dentro de un entorno tranquilo y exclusivo.", image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900&q=85", alt: "Frente del mar", aspect: "aspect-[3/4]" },
+    { number: "01", title: "Ubicacion privilegiada", image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=85", alt: "Playa Pimentel", aspect: "aspect-[3/4]", text: "En la primera fila del Malecon de Pimentel, a pocos pasos de la playa, el muelle historico y los principales puntos de interes.", aspect: "aspect-[3/4]", image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=85", alt: "Playa Pimentel" },
+    { number: "02", title: "Vistas directas al mar y al muelle", image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=85", alt: "Vistas al mar", aspect: "aspect-[4/5]", text: "El proyecto integra el oceano a la vida cotidiana, con vistas desde el dormitorio principal, la sala y los espacios exteriores.", aspect: "aspect-[4/5]", image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=85", alt: "Vistas al mar" },
+    { number: "03", title: "Inversion inteligente", image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900&q=85", alt: "Frente del mar", aspect: "aspect-[3/4]", text: "Una propiedad en una zona de alta plusvalia, a solo 15 minutos de Chiclayo, dentro de un entorno tranquilo y exclusivo.", image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900&q=85", alt: "Frente del mar", aspect: "aspect-[3/4]" },
     ];
   return (
     <section className="section-pad bg-beige/40">
