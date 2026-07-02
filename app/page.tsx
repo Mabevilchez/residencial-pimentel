@@ -29,7 +29,7 @@ function Navigation() {
       ))}
     </ul>
     <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className={`hidden lg:inline-flex items-center px-5 py-2.5 text-sm font-medium font-sans tracking-wide transition-all ${scrolled ? "bg-ocean text-white hover:bg-ocean/90" : "bg-white text-navy hover:bg-white/90"}`}>Solicitar info</a>
-    <button onClick={() => setMobileOpen(!mobileOpen)} className={`lg:hidden p-2 ${scrolled ? "text-charcoal" : "text-white"}`} aria-label="Menu">
+    <button onClick={() => setMobileOpen(!mobileOpen)} className={`lg:hidden p-2 ${scrolled ? "text-charcoal" : "text-white"}`} aria-label="Menú">
       {mobileOpen ? <X size={22} /> : <Menu size={22} />}
     </button>
     </nav>
@@ -65,12 +65,12 @@ function HeroSection() {
     </h1>
     <p className="font-serif text-2xl md:text-3xl font-light text-white/70 mb-6 italic">Vive Pimentel</p>
     <div className="w-12 border-t border-sand/50 mb-8" />
-    <p className="font-sans text-base md:text-lg font-light text-white/80 max-w-xl mb-10 leading-relaxed">Departamentos en primera linea frente al mar, disenados para disfrutar en familia y mas.</p>
+    <p className="font-sans text-base md:text-lg font-light text-white/80 max-w-xl mb-10 leading-relaxed">Departamentos en primera línea frente al mar, diseñados para disfrutar en familia y más.</p>
     <div className="flex flex-col sm:flex-row gap-4 mb-12">
     <a href="#departamentos" className="btn-primary">Conoce los departamentos</a>
     <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-outline">Hablar por WhatsApp</a>
     </div>
-    <p className="font-sans text-xs text-white/50 tracking-widest uppercase">Solo 30 departamentos · 27 flats · 3 duplex</p>
+    <p className="font-sans text-xs text-white/50 tracking-widest uppercase">Solo 30 departamentos · 27 flats · 3 dúplex</p>
     </div>
     <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
     <ChevronDown size={20} className="text-white/40" />
@@ -82,8 +82,8 @@ function HeroSection() {
 function ProjectOverview() {
   const facts = [
     { icon: Layers, label: "9 pisos" }, { icon: Home, label: "27 flats" },
-    { icon: Building2, label: "3 duplex" }, { icon: BedDouble, label: "Desde 3 dormitorios" },
-    { icon: Waves, label: "Vistas al mar" }, { icon: UtensilsCrossed, label: "Centro gastronomico" },
+    { icon: Building2, label: "3 dúplex" }, { icon: BedDouble, label: "Desde 3 dormitorios" },
+    { icon: Waves, label: "Vistas al mar" }, { icon: UtensilsCrossed, label: "Centro gastronómico" },
     ];
   return (
     <section id="proyecto" className="section-pad bg-warm-white">
@@ -98,9 +98,9 @@ function ProjectOverview() {
     <div className="flex flex-col justify-center">
     <p className="eyebrow mb-6">El Proyecto</p>
     <h2 className="headline-lg text-charcoal mb-3">Residencial Pimentel</h2>
-    <p className="font-serif text-xl md:text-2xl text-ocean font-light italic mb-8">Primera linea frente al mar</p>
+    <p className="font-serif text-xl md:text-2xl text-ocean font-light italic mb-8">Primera línea frente al mar</p>
     <div className="w-10 border-t border-sand mb-8" />
-    <p className="font-sans text-base text-charcoal/75 leading-relaxed mb-12 max-w-lg">Un proyecto residencial de nueve pisos ubicado en el Malecon de Pimentel. Sus departamentos han sido disenados para ofrecer vistas y confort.</p>
+    <p className="font-sans text-base text-charcoal/75 leading-relaxed mb-12 max-w-lg">Un proyecto residencial de nueve pisos ubicado en el Malecón de Pimentel. Sus departamentos han sido diseñados para ofrecer vistas y confort.</p>
     <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-7">
       {facts.map(({ icon: Icon, label }) => (
       <div key={label} className="flex items-center gap-3">
@@ -122,33 +122,33 @@ function WhySection() {
   const reasons = [
     {
       number: "01",
-      title: "Ubicacion privilegiada",
-      text: "En la primera fila del Malecon de Pimentel, a pocos pasos de la playa, el muelle historico y los principales puntos de interes.",
+      title: "Ubicación privilegiada",
+      text: "En la primera fila del Malecón de Pimentel, a pocos pasos de la playa, el muelle histórico y los principales puntos de interés.",
       aspect: "aspect-[3/4]",
       image: "/lobby/Pimentel%201.jpg.jpeg",
-      alt: "Ubicacion privilegiada en Pimentel",
+      alt: "Ubicación privilegiada en Pimentel",
     },
     {
       number: "02",
       title: "Vistas directas al mar y al muelle",
-      text: "El proyecto integra el oceano a la vida cotidiana, con vistas desde el dormitorio principal, la sala y los espacios exteriores.",
+      text: "El proyecto integra el océano a la vida cotidiana, con vistas desde el dormitorio principal, la sala y los espacios exteriores.",
       aspect: "aspect-[4/5]",
       image: "https://images.unsplash.com/photo-1414609245224-afa02bfb3fda?q=80&w=989&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       alt: "Vistas al mar",
     },
     {
       number: "03",
-      title: "Inversion inteligente",
-      text: "Una propiedad en una zona de alta plusvalia, a solo 15 minutos de Chiclayo, dentro de un entorno tranquilo y exclusivo.",
+      title: "Inversión inteligente",
+      text: "Una propiedad en una zona de alta plusvalía, a solo 15 minutos de Chiclayo, dentro de un entorno tranquilo y exclusivo.",
       aspect: "aspect-[3/4]",
       image: "/lobby/2AEFB28E-C08B-4E5F-8BBE-299D8DFD5DBD_1_105_c.jpeg",
-      alt: "Inversion inmobiliaria frente al mar",
+      alt: "Inversión inmobiliaria frente al mar",
     },
   ];
   return (
     <section className="section-pad bg-beige/40">
     <div className="container-narrow">
-    <div className="mb-16"><p className="eyebrow mb-6">Por que elegirnos</p><h2 className="headline-lg text-charcoal max-w-xl">Por que Residencial Pimentel?</h2></div>
+    <div className="mb-16"><p className="eyebrow mb-6">Por qué elegirnos</p><h2 className="headline-lg text-charcoal max-w-xl">¿Por qué Residencial Pimentel?</h2></div>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
       {reasons.map((r, i) => (
       <div key={r.number} className={`flex flex-col gap-6 ${i === 1 ? "md:-mb-12" : ""}`}>
@@ -165,9 +165,13 @@ function WhySection() {
 
 function ImageBreak() {
   return (
-    <section className="relative w-full min-h-[60vh] flex items-center justify-start overflow-hidden">
+    <section className="relative w-full min-h-[60vh] flex items-start justify-start overflow-hidden">
     <div className="absolute inset-0"><Image src="https://images.unsplash.com/photo-1625175006425-d61920aa8794?q=80&w=1920&auto=format&fit=crop" alt="Costa de Pimentel" fill className="object-cover" /></div>
-    <div className="relative z-10 px-6 pt-12 pb-24"><h2 className="font-serif text-4xl md:text-6xl font-light text-white max-w-4xl">Donde cada dia empieza y termina cerca del mar</h2></div>
+    <div className="relative z-10 container-narrow w-full pt-10 md:pt-14">
+    <div className="w-fit max-w-4xl bg-white/85 backdrop-blur-sm px-5 py-4 md:px-8 md:py-6">
+    <h2 className="font-serif text-4xl md:text-6xl font-light text-ocean">Donde cada día empieza y termina cerca del mar</h2>
+    </div>
+    </div>
     </section>
     );
 }
@@ -178,12 +182,12 @@ function LocationSection() {
   return (
     <section id="ubicacion" className="section-pad bg-warm-white">
     <div className="container-narrow">
-    <div className="mb-12"><p className="eyebrow mb-5">Ubicacion estrategica</p><h2 className="headline-lg text-charcoal mb-4">Todo cerca. El mar aun mas.</h2><p className="font-sans text-base text-charcoal/75 leading-relaxed max-w-xl">Residencial Pimentel se ubica en un entorno con facil acceso a servicios y conectividad.</p></div>
+    <div className="mb-12"><p className="eyebrow mb-5">Ubicación estratégica</p><h2 className="headline-lg text-charcoal mb-4">Todo cerca. El mar aún más.</h2><p className="font-sans text-base text-charcoal/75 leading-relaxed max-w-xl">Residencial Pimentel se ubica en un entorno con fácil acceso a servicios y conectividad.</p></div>
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
     <div className="relative aspect-[4/3] bg-beige border border-sand overflow-hidden">
     <Image
       src="/lobby/360_F_524126883_Z9HJX7FOnKZpJ7NCaTAzxS8Hi6U2SAuJ.jpg"
-      alt="Ubicacion de Residencial Pimentel frente al malecon"
+      alt="Ubicación de Residencial Pimentel frente al malecón"
       fill
       className="object-cover"
       sizes="(max-width: 1024px) 100vw, 50vw"
@@ -211,12 +215,12 @@ function LifestyleSection() {
     <section className="section-pad bg-beige/30">
     <div className="container-narrow">
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-    <div className="order-2 lg:order-1"><p className="eyebrow mb-6">Estilo de vida</p><h2 className="headline-lg text-charcoal mb-8">Disenado para que el mar sea parte de tu hogar.</h2><div className="w-10 border-t border-sand mb-6" /><p className="font-sans text-base text-charcoal/75 leading-relaxed">Espacios pensados para confort, ventilacion y vistas al oceano.</p></div>
+    <div className="order-2 lg:order-1"><p className="eyebrow mb-6">Estilo de vida</p><h2 className="headline-lg text-charcoal mb-8">Diseñado para que el mar sea parte de tu hogar.</h2><div className="w-10 border-t border-sand mb-6" /><p className="font-sans text-base text-charcoal/75 leading-relaxed">Espacios pensados para confort, ventilación y vistas al océano.</p></div>
     <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
     <div className="relative aspect-[3/4] overflow-hidden"><Image src="/lobby/24.%20DORMITORIO%20PRINCIPAL.png" alt="Dormitorio principal del departamento" fill className="object-cover" /></div>
     <div className="flex flex-col gap-4">
-    <div className="relative aspect-square overflow-hidden"><Image src="/lobby/26.%20SALA%20DE%20DUPLEX01.png" alt="Sala del duplex frente al mar" fill className="object-cover" /></div>
-    <div className="relative aspect-square overflow-hidden"><Image src="/lobby/30.%20TERRAZA%20DUPLEX02.png" alt="Terraza del duplex frente al mar" fill className="object-cover" /></div>
+    <div className="relative aspect-square overflow-hidden"><Image src="/lobby/26.%20SALA%20DE%20DUPLEX01.png" alt="Sala del dúplex frente al mar" fill className="object-cover" /></div>
+    <div className="relative aspect-square overflow-hidden"><Image src="/lobby/30.%20TERRAZA%20DUPLEX02.png" alt="Terraza del dúplex frente al mar" fill className="object-cover" /></div>
     </div>
     </div>
     </div>
@@ -234,12 +238,12 @@ function CanvaPresentationSection() {
     <div className="mb-10 text-center">
     <p className="eyebrow mb-5">Conoce el proyecto</p>
     <h2 className="headline-lg text-charcoal mb-4">Explora nuestros departamentos</h2>
-    <p className="font-sans text-base text-charcoal/70 leading-relaxed max-w-2xl mx-auto">Recorre la presentacion interactiva para conocer los modelos, distribuciones, metrajes y espacios de Residencial Pimentel.</p>
+    <p className="font-sans text-base text-charcoal/70 leading-relaxed max-w-2xl mx-auto">Recorre la presentación interactiva para conocer los modelos, distribuciones, metrajes y espacios de Residencial Pimentel.</p>
     </div>
     <div className="relative w-full aspect-[16/9] min-h-[520px] md:min-h-[680px] overflow-hidden border border-sand/60 bg-beige shadow-sm">
     <iframe
       src="https://www.canva.com/design/DAHOCrB0C2Q/view?embed"
-      title="Presentacion interactiva de Residencial Pimentel"
+      title="Presentación interactiva de Residencial Pimentel"
       loading="lazy"
       allowFullScreen
       className="absolute inset-0 h-full w-full border-0"
@@ -252,7 +256,7 @@ function CanvaPresentationSection() {
       rel="noopener noreferrer"
       className="btn-primary inline-flex items-center gap-2"
     >
-      Abrir presentacion en pantalla completa <ArrowRight size={16} />
+      Abrir presentación en pantalla completa <ArrowRight size={16} />
     </a>
     </div>
     </div>
@@ -265,10 +269,10 @@ function TerracesSection() {
     <section className="section-pad bg-[#D8C39A]">
     <div className="container-narrow">
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-    <div><p className="eyebrow mb-6 text-navy/70">Solo en los duplex</p><h2 className="headline-lg text-charcoal mb-8">Tu propia terraza frente al mar.</h2><div className="w-10 border-t border-navy/30 mb-6" /></div>
+    <div><p className="eyebrow mb-6 text-navy/70">Solo en los dúplex</p><h2 className="headline-lg text-charcoal mb-8">Tu propia terraza frente al mar.</h2><div className="w-10 border-t border-navy/30 mb-6" /></div>
     <div className="grid grid-cols-2 gap-4">
-    <div className="relative aspect-[3/4] overflow-hidden"><Image src="/lobby/30.%20TERRAZA%20DUPLEX02.png" alt="Terraza del duplex frente al mar" fill className="object-cover" /></div>
-    <div className="relative aspect-[3/4] overflow-hidden mt-8"><Image src="/lobby/29.%20TERRAZA%20DUPLEX01.png" alt="Terraza privada del duplex" fill className="object-cover" /></div>
+    <div className="relative aspect-[3/4] overflow-hidden"><Image src="/lobby/30.%20TERRAZA%20DUPLEX02.png" alt="Terraza del dúplex frente al mar" fill className="object-cover" /></div>
+    <div className="relative aspect-[3/4] overflow-hidden mt-8"><Image src="/lobby/29.%20TERRAZA%20DUPLEX01.png" alt="Terraza privada del dúplex" fill className="object-cover" /></div>
     </div>
     </div>
     </div>
@@ -278,19 +282,19 @@ function TerracesSection() {
 
 function CommonAreas() {
   const areas = [
-    {title:"Lobby y acceso",text:"Ingreso de diseno elegante con acabados en materiales naturales.",image:"/lobby/02.%20INGRESO%20RESIDENCIAL.png"},
-    {title:"SUM",text:"Salon de usos multiples para reuniones y celebraciones privadas.",image:"/lobby/18.%20TERRAZA%20SUM.png"},
-    {title:"Bar-Lounge",text:"Espacio social intimo con vistas al Malecon.",image:"/lobby/16.%20SUM.png"},
-    {title:"Coworking",text:"Area de trabajo equipada para el profesional moderno.",image:"/lobby/19.%20COWORKING.png"},
+    {title:"Lobby y acceso",text:"Ingreso de diseño elegante con acabados en materiales naturales.",image:"/lobby/02.%20INGRESO%20RESIDENCIAL.png"},
+    {title:"SUM",text:"Salón de usos múltiples para reuniones y celebraciones privadas.",image:"/lobby/18.%20TERRAZA%20SUM.png"},
+    {title:"Bar-Lounge",text:"Espacio social íntimo con vistas al Malecón.",image:"/lobby/16.%20SUM.png"},
+    {title:"Coworking",text:"Área de trabajo equipada para el profesional moderno.",image:"/lobby/19.%20COWORKING.png"},
     ];
   return (
     <section id="areas-comunes" className="section-pad bg-beige/20">
     <div className="container-narrow">
-    <div className="mb-16"><p className="eyebrow mb-5">Areas comunes</p><h2 className="headline-lg text-charcoal">Espacios para vivir al maximo.</h2></div>
+    <div className="mb-16"><p className="eyebrow mb-5">Áreas comunes</p><h2 className="headline-lg text-charcoal">Espacios para vivir al máximo.</h2></div>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
       {areas.map((area) => (<div key={area.title} className="group"><div className="relative aspect-[3/4] overflow-hidden mb-4"><Image src={area.image} alt={area.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 1024px) 100vw" /></div><p className="font-sans text-sm font-medium text-charcoal mb-2">{area.title}</p><p className="font-sans text-xs text-charcoal/60">{area.text}</p></div>))}
     </div>
-    <div className="border border-sand p-8 bg-warm-white"><div className="flex items-start gap-4"><UtensilsCrossed size={24} strokeWidth={1.25} className="text-ocean flex-shrink-0 mt-1" /><div><h3 className="font-serif text-xl text-charcoal mb-2">Centro gastronomico</h3><p className="font-sans text-sm text-charcoal/70">Areas de servicio disenadas para que disfrutes de una variada oferta culinaria en el mismo proyecto.</p></div></div></div>
+    <div className="border border-sand p-8 bg-warm-white"><div className="flex items-start gap-4"><UtensilsCrossed size={24} strokeWidth={1.25} className="text-ocean flex-shrink-0 mt-1" /><div><h3 className="font-serif text-xl text-charcoal mb-2">Centro gastronómico</h3><p className="font-sans text-sm text-charcoal/70">Áreas de servicio diseñadas para que disfrutes de una variada oferta culinaria en el mismo proyecto.</p></div></div></div>
     </div>
     </section>
     );
@@ -310,12 +314,12 @@ function InvestmentCTA() {
     <div className="absolute inset-0 bg-navy/65" />
     </div>
     <div className="relative z-10 container-narrow">
-    <p className="eyebrow text-sand mb-8 mx-auto">Preventa exclusiva</p>
-    <h2 className="headline-lg text-white mb-8 max-w-3xl mx-auto">Una inversion con el mar como horizonte.</h2>
+    <p className="eyebrow w-fit bg-white/95 text-navy px-5 py-2 mb-8 mx-auto shadow-sm">Preventa exclusiva</p>
+    <h2 className="headline-lg text-white mb-8 max-w-3xl mx-auto">Una inversión con el mar como horizonte.</h2>
     <div className="w-10 border-t border-sand/70 mb-8 mx-auto" />
-    <p className="font-sans text-base text-white/80 leading-relaxed max-w-2xl mx-auto mb-12">Residencial Pimentel combina ubicacion, exclusividad y una propuesta arquitectonica disenada para disfrutar.</p>
-    <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">{["Primera linea frente al mar","A 15 minutos de Chiclayo","Solo 30 departamentos"].map((b) => (<div key={b} className="text-sm text-white/85">{b}</div>))}</div>
-    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary bg-sand text-navy hover:bg-white hover:text-navy text-base px-10 py-4">Recibir informacion de preventa</a>
+    <p className="font-sans text-base text-white/80 leading-relaxed max-w-2xl mx-auto mb-12">Residencial Pimentel combina ubicación, exclusividad y una propuesta arquitectónica diseñada para disfrutar.</p>
+    <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">{["Primera línea frente al mar","A 15 minutos de Chiclayo","Solo 30 departamentos"].map((b) => (<div key={b} className="text-sm text-white/85">{b}</div>))}</div>
+    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary bg-sand text-navy hover:bg-white hover:text-navy text-base px-10 py-4">Recibir información de preventa</a>
     </div>
     </section>
     );
@@ -327,7 +331,7 @@ function ContactForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.consent) return;
-    const msg = `Hola, me interesa Residencial Pimentel.\nNombre: ${form.name}\nTelefono: ${form.phone}\nEmail: ${form.email}\nTipo: ${form.tipo || "No especificado"}\n${form.mensaje ? "Mensaje: " + form.mensaje : ""}`;
+    const msg = `Hola, me interesa Residencial Pimentel.\nNombre: ${form.name}\nTeléfono: ${form.phone}\nEmail: ${form.email}\nTipo: ${form.tipo || "No especificado"}\n${form.mensaje ? "Mensaje: " + form.mensaje : ""}`;
     window.open(`https://wa.me/${PROJECT.whatsapp}?text=${encodeURIComponent(msg)}`, "_blank");
     setSubmitted(true);
   };
@@ -335,21 +339,21 @@ function ContactForm() {
     <section id="contacto" className="section-pad bg-navy">
     <div className="container-narrow">
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-    <div><p className="eyebrow text-sand/70 mb-6">Comienza ahora</p><h2 className="headline-lg text-white mb-6">Tu vida junto al mar empieza aqui.</h2><div className="w-10 border-t border-sand mb-6" /></div>
+    <div><p className="eyebrow text-sand/70 mb-6">Comienza ahora</p><h2 className="headline-lg text-white mb-6">Tu vida junto al mar empieza aquí.</h2><div className="w-10 border-t border-sand mb-6" /></div>
       {!submitted ? (
       <form onSubmit={handleSubmit} className="space-y-5">
       <div><label className="font-sans text-xs text-white/60 block mb-1.5 tracking-wide uppercase">Nombre y apellido *</label><input type="text" required value={form.name} onChange={(e) => setForm({...form,name:e.target.value})} className="w-full p-3 rounded bg-white/5 border border-white/10 text-white/90" /></div>
       <div className="grid grid-cols-2 gap-4">
-      <div><label className="font-sans text-xs text-white/60 block mb-1.5 tracking-wide uppercase">Telefono *</label><input type="tel" required value={form.phone} onChange={(e) => setForm({...form,phone:e.target.value})} className="w-full p-3 rounded bg-white/5 border border-white/10 text-white/90" /></div>
+      <div><label className="font-sans text-xs text-white/60 block mb-1.5 tracking-wide uppercase">Teléfono *</label><input type="tel" required value={form.phone} onChange={(e) => setForm({...form,phone:e.target.value})} className="w-full p-3 rounded bg-white/5 border border-white/10 text-white/90" /></div>
       <div><label className="font-sans text-xs text-white/60 block mb-1.5 tracking-wide uppercase">Correo *</label><input type="email" required value={form.email} onChange={(e) => setForm({...form,email:e.target.value})} className="w-full p-3 rounded bg-white/5 border border-white/10 text-white/90" /></div>
       </div>
-      <div><label className="font-sans text-xs text-white/60 block mb-1.5 tracking-wide uppercase">Tipo de departamento</label><select value={form.tipo} onChange={(e) => setForm({...form,tipo:e.target.value})} className="w-full p-3 rounded bg-white/5 border border-white/10 text-white/90"><option value="">Seleccionar</option><option value="flat">Flat</option><option value="duplex">Duplex</option></select></div>
+      <div><label className="font-sans text-xs text-white/60 block mb-1.5 tracking-wide uppercase">Tipo de departamento</label><select value={form.tipo} onChange={(e) => setForm({...form,tipo:e.target.value})} className="w-full p-3 rounded bg-white/5 border border-white/10 text-white/90"><option value="">Seleccionar</option><option value="flat">Flat</option><option value="duplex">Dúplex</option></select></div>
       <div><label className="font-sans text-xs text-white/60 block mb-1.5 tracking-wide uppercase">Mensaje (opcional)</label><textarea value={form.mensaje} onChange={(e) => setForm({...form,mensaje:e.target.value})} className="w-full p-3 rounded bg-white/5 border border-white/10 text-white/90" /></div>
       <div className="flex items-start gap-3"><input type="checkbox" id="consent" checked={form.consent} onChange={(e) => setForm({...form, consent: e.target.checked})} className="mt-1 accent-ocean" /><label htmlFor="consent" className="font-sans text-sm text-white/70">Acepto ser contactado por el equipo de ventas.</label></div>
-      <button type="submit" className="w-full btn-primary bg-sand text-navy hover:bg-white hover:text-navy py-4 text-base">Solicitar informacion</button>
+      <button type="submit" className="w-full btn-primary bg-sand text-navy hover:bg-white hover:text-navy py-4 text-base">Solicitar información</button>
       </form>
       ) : (
-      <div className="bg-white/10 border border-sand/30 p-10 text-center"><Check size={40} className="text-sand mx-auto mb-6" /><h3 className="font-serif text-2xl text-white mb-4">Gracias! Hemos recibido tu solicitud.</h3><p className="text-white/70">Nos contactaremos contigo a la brevedad.</p></div>
+      <div className="bg-white/10 border border-sand/30 p-10 text-center"><Check size={40} className="text-sand mx-auto mb-6" /><h3 className="font-serif text-2xl text-white mb-4">¡Gracias! Hemos recibido tu solicitud.</h3><p className="text-white/70">Nos contactaremos contigo a la brevedad.</p></div>
     )}
     </div>
     </div>
@@ -364,10 +368,10 @@ function FooterSection() {
     <div className="container-narrow">
     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
     <div><p className="font-serif text-2xl text-white font-light mb-1">Residencial Pimentel</p><p className="font-serif text-sm text-sand italic mb-6">{PROJECT.tagline}</p><p className="text-xs text-white/60">{PROJECT.address}</p></div>
-    <div><p className="font-sans text-xs tracking-widest uppercase text-white/40 mb-5">Navegacion</p><ul className="space-y-3">{links.map((l) => (<li key={l.href}><a href={l.href} className="text-sm text-white/80">{l.label}</a></li>))}</ul></div>
+    <div><p className="font-sans text-xs tracking-widest uppercase text-white/40 mb-5">Navegación</p><ul className="space-y-3">{links.map((l) => (<li key={l.href}><a href={l.href} className="text-sm text-white/80">{l.label}</a></li>))}</ul></div>
     <div><p className="font-sans text-xs tracking-widest uppercase text-white/40 mb-5">Contacto</p><div className="space-y-3"><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-white/80">{PROJECT.whatsappDisplay}</a><p className="text-sm text-white/60">{PROJECT.instagram}</p></div></div>
     </div>
-    <div className="border-t border-white/10 pt-8"><p className="font-sans text-xs text-white/30 leading-relaxed">Las imagenes, acabados, mobiliario y elementos decorativos son referenciales y pueden variar en la version final.</p></div>
+    <div className="border-t border-white/10 pt-8"><p className="font-sans text-xs text-white/30 leading-relaxed">Las imágenes, acabados, mobiliario y elementos decorativos son referenciales y pueden variar en la versión final.</p></div>
     </div>
     </footer>
     );
