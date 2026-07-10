@@ -368,7 +368,7 @@ function FooterSection() {
     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
     <div><p className="font-serif text-2xl text-white font-light mb-1">Residencial Pimentel</p><p className="font-serif text-sm text-sand italic mb-6">{PROJECT.tagline}</p><p className="text-xs text-white/60">{PROJECT.address}</p></div>
     <div><p className="font-sans text-xs tracking-widest uppercase text-white/40 mb-5">Navegación</p><ul className="space-y-3">{links.map((l) => (<li key={l.href}><a href={l.href} className="text-sm text-white/80">{l.label}</a></li>))}</ul></div>
-    <div><p className="font-sans text-xs tracking-widest uppercase text-white/40 mb-5">Contacto</p><div className="space-y-3"><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-white/80">{PROJECT.whatsappDisplay}</a><p className="text-sm text-white/60">{PROJECT.instagram}</p></div></div>
+    <div><p className="font-sans text-xs tracking-widest uppercase text-white/40 mb-5">Contacto</p><div className="space-y-3"><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-white/80">{PROJECT.whatsappDisplay}</a><a href="https://instagram.com/costiera.realty" target="_blank" rel="noopener noreferrer" className="text-sm text-white/60 hover:text-white transition-colors">{PROJECT.instagram}</a></div></div>
     </div>
     <div className="border-t border-white/10 pt-8"><p className="font-sans text-xs text-white/30 leading-relaxed">Las imágenes, acabados, mobiliario y elementos decorativos son referenciales y pueden variar en la versión final.</p></div>
     </div>
