@@ -70,7 +70,7 @@ function HeroSection() {
     <a href="#departamentos" className="btn-primary">Conoce los departamentos</a>
     <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-outline">Hablar por WhatsApp</a>
     </div>
-    <p className="font-sans text-xs text-white/50 tracking-widest uppercase">Solo 30 departamentos · 27 flats · 3 dúplex</p>
+    <p className="font-sans text-xs text-white/50 tracking-widest uppercase">Solo 30 departamentos · 30 flats · 3 dúplex</p>
     </div>
     <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
     <ChevronDown size={20} className="text-white/40" />
@@ -81,9 +81,9 @@ function HeroSection() {
 
 function ProjectOverview() {
   const facts = [
-    { icon: Layers, label: "9 pisos" }, { icon: Home, label: "27 flats" },
+    { icon: Layers, label: "9 pisos" }, { icon: Home, label: "30 flats" },
     { icon: Building2, label: "3 dúplex" }, { icon: BedDouble, label: "Desde 3 dormitorios" },
-    { icon: Waves, label: "Vistas al mar" }, { icon: UtensilsCrossed, label: "Centro gastronómico" },
+    { icon: Waves, label: "Vistas al mar" }, { icon: UtensilsCrossed, label: "Áreas Comunes" },
     ];
   return (
     <section id="proyecto" className="section-pad bg-warm-white">
@@ -293,7 +293,7 @@ function CommonAreas() {
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
       {areas.map((area) => (<div key={area.title} className="group"><div className="relative aspect-[3/4] overflow-hidden mb-4"><Image src={area.image} alt={area.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 1024px) 100vw" /></div><p className="font-sans text-sm font-medium text-charcoal mb-2">{area.title}</p><p className="font-sans text-xs text-charcoal/60">{area.text}</p></div>))}
     </div>
-    <div className="border border-sand p-8 bg-warm-white"><div className="flex items-start gap-4"><UtensilsCrossed size={24} strokeWidth={1.25} className="text-ocean flex-shrink-0 mt-1" /><div><h3 className="font-serif text-xl text-charcoal mb-2">Centro gastronómico</h3><p className="font-sans text-sm text-charcoal/70">Áreas de servicio diseñadas para que disfrutes de una variada oferta culinaria en el mismo proyecto.</p></div></div></div>
+    <div className="border border-sand p-8 bg-warm-white"><div className="flex items-start gap-4"><UtensilsCrossed size={24} strokeWidth={1.25} className="text-ocean flex-shrink-0 mt-1" /><div><h3 className="font-serif text-xl text-charcoal mb-2">Áreas Comunes</h3><p className="font-sans text-sm text-charcoal/70">Áreas de servicio diseñadas para que disfrutes de una variada oferta culinaria en el mismo proyecto.</p></div></div></div>
     </div>
     </section>
     );
